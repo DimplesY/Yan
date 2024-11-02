@@ -2,13 +2,13 @@
 </script>
 
 <template>
-  <div class="h-screen max-w-7xl mxa flex items-center">
-    <main class="w-full h-200 bg-background text-foreground space-y-2xl">
+  <div class="min-h-screen max-w-7xl mxa flex items-center">
+    <main class="w-full bg-background text-foreground space-y-2xl">
       <NuxtImg src="https://avatars.githubusercontent.com/u/51285767?v=4" class="rounded-full mxa block h-20 w-20 border shadow border-yan-border" placeholder alt="DimplesY" />
 
       <h1 class="text-3xl text-center">DimplesY's Homepage</h1>
 
-      <div class="prose mxa">
+      <div class="prose mxa px-4 box-border md:px-0">
         <ContentDoc path="/" />
       </div>
 
