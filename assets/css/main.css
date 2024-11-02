@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --background: 216 28% 7%;
+  --foreground: 210 67% 96%;
+  --border: 218 11% 65%;
+}
+
+#__nuxt {
+  @apply bg-background text-foreground min-h-screen;
+}
