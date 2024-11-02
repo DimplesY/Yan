@@ -2,9 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   css: ['@unocss/reset/tailwind.css', './assets/css/main.css'],
-  modules: [
-    '@unocss/nuxt',
-  ],
+  modules: ['@unocss/nuxt', '@nuxt/eslint'],
   app: {
     head: {
       title: 'DimplesY\'s Site'
