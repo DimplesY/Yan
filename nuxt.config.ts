@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   compatibilityDate: '2024-11-03',
   css: ['@unocss/reset/tailwind.css', './assets/css/main.css'],
   modules: ['@unocss/nuxt', '@nuxt/eslint', '@nuxt/content', '@nuxt/image'],

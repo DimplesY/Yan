@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const name = '1' + '2'
 </script>
 
 <template>
@@ -13,7 +14,16 @@
       </div>
 
 
-      <div class="flex gap-2 justify-center">
+      <div class="flex gap-4 justify-center">
+        <div>
+          <div class="w-20 h-20 border-yan-border border-1 rounded-lg grid place-content-center cursor-pointer ">
+            <a href="https://blog.dimples.top" class="w-full h-full flex justify-center flex-col items-center">
+              <img src="https://blog.dimples.top/img/DI-logo.png" class="text-foreground w-10 h-10" >
+              <div class="text-sm">My Blog</div>
+            </a>
+          </div>
+        </div>
+        
         <div class="w-20 h-20 border-yan-border border-1 rounded-lg cursor-pointer">
           <a href="https://github.com/DimplesY" class="w-full h-full flex justify-center flex-col items-center">
             <div class="i-carbon-logo-github text-foreground w-10 h-10"/>
