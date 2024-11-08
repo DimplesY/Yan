@@ -16,7 +16,7 @@ export default defineConfig({
     colors: {
       background: "hsl(var(--background))",
       foreground: "hsl(var(--foreground))",
-      yan: {
+      brand: {
         border: {
           DEFAULT: 'hsl(var(--border))',
         }
@@ -30,7 +30,12 @@ export default defineConfig({
       cdn: 'https://esm.sh/'
     }),
     presetTypography(),
-    presetWebFonts(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        sans: 'Faculty Glyphic'
+      }
+    }),
   ],
   transformers: [
     transformerDirectives(),
