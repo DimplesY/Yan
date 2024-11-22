@@ -3,7 +3,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: '2024-11-03',
   css: ['@unocss/reset/tailwind.css', './assets/css/main.css'],
-  modules: ['@unocss/nuxt', '@nuxt/eslint', '@nuxt/content', '@nuxt/image'],
+  modules: [
+    '@unocss/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/content',
+    '@nuxt/image',
+    '@vueuse/nuxt',
+    '@vueuse/motion/nuxt'
+  ],
 
   app: {
     head: {

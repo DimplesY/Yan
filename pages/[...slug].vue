@@ -1,23 +1,19 @@
 <script setup lang="ts">
-const app = useNuxtApp()
 
-if(import.meta.client) {
-  console.log(app)
-}
 </script>
 
 <template>
   <div class="min-h-screen max-w-7xl mxa flex items-center">
     <main class="w-full bg-background text-foreground space-y-2xl">
-      <NuxtImg src="https://avatars.githubusercontent.com/u/51285767?v=4" class="rounded-full mxa block h-20 w-20 border shadow border-brand-border" placeholder alt="DimplesY" />
+      <NuxtImg v-motion-fade src="https://avatars.githubusercontent.com/u/51285767?v=4" class="rounded-full mxa block h-20 w-20 border shadow border-brand-border" placeholder alt="DimplesY" />
 
-      <h1 class="text-3xl text-center">DimplesY's Homepage</h1>
+      <h1 v-motion-slide-bottom  class="text-3xl font-bold text-center">DimplesY's Homepage</h1>
 
-      <div class="prose mxa px-4 box-border md:px-0">
+      <div v-motion-slide-bottom class="prose mxa px-4 box-border md:px-0 text-xl">
         <ContentDoc path="/" />
       </div>
 
-      <div class="flex gap-4 justify-center">
+      <div v-motion-slide-bottom class="flex gap-4 justify-center">
         <div>
           <div class="w-20 h-20 border-brand-border border-1 rounded-lg grid place-content-center cursor-pointer ">
             <a href="https://blog.dimples.top" class="w-full h-full flex justify-center flex-col items-center">

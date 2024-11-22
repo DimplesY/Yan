@@ -33,7 +33,8 @@ export default defineConfig({
     presetWebFonts({
       provider: 'google',
       fonts: {
-        sans: 'Faculty Glyphic'
+        sans: 'Montserrat',
+        serif: 'Josefin Slab',
       }
     }),
   ],

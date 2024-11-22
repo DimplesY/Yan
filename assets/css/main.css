@@ -1,11 +1,15 @@
 
 :root {
-  --background: 216 28% 7%;
-  --foreground: 210 67% 96%;
+  --background: 213 25% 17%;
+  --foreground: 0 0% 90%;
   --border: 218 11% 65%;
 }
 
 
 #__nuxt {
-  @apply bg-background text-foreground min-h-screen font-sans;
+  @apply bg-background text-foreground min-h-screen font-serif;
+}
+
+p {
+  @apply leading-tight break-words;
 }

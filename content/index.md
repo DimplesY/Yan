@@ -1,11 +1,5 @@
-Hi everyone, I'm DimplesY, a full-stack software engineer.
+Hi, I'm DimplesY, a full-stack software engineer with a passion for web and app development. I love exploring interesting projects on GitHub and diving deep into the latest technology trends.
 
-I usually work on web and app development and enjoy exploring various interesting projects on GitHub.
-
-I have a passion for technology and love diving into fascinating topics.
-
-Coding might just be the coolest thing in the world.
-
-My primary tech stack consists of JavaScript/TypeScript, Java, and Python, but I've also been learning Rust and Go.
+Coding is one of the most exciting things in the world to me, and I'm always eager to learn and grow. My primary tech stack includes JavaScript/TypeScript, Java, and Python, and I'm also expanding my skills with Rust and Go.
 
 If you're interested in connecting with me, you can reach me through the following channels:
