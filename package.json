@@ -21,6 +21,8 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4",
     "@nuxt/eslint": "^0.6.1",
     "@unocss/nuxt": "^0.64.0",
     "eslint": "^9.14.0",
