@@ -7,9 +7,9 @@
 
 
 #__nuxt {
-  @apply bg-background text-foreground min-h-screen font-serif;
+  --at-apply: bg-background text-foreground min-h-screen font-serif;
 }
 
 p {
-  @apply leading-tight break-words;
+  --at-apply: leading-tight break-words;
 }

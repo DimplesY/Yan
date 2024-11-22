@@ -9,9 +9,14 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
-
+  site: {
+    url: 'https://dimples.top',
+    name: 'DimplesY\'s Site',
+  },
   app: {
     head: {
       title: 'DimplesY\'s Site',
