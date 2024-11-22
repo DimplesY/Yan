@@ -19,7 +19,7 @@ export default defineConfig({
       brand: {
         border: {
           DEFAULT: 'hsl(var(--border))',
-        }
+        },
       }
     }
   },
