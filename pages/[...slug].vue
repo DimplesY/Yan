@@ -13,25 +13,25 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
           :delay="0.2"
           :duration="0.75"
         >
-          <h1 class="text-3xl font-bold text-center">Hey, I'm DimplesY 👋</h1>
+          <h1 class="text-xl md:text-3xl font-bold text-center">Hey, I'm DimplesY 👋</h1>
         </BlurReveal>
       </ClientOnly>
 
 
 
-      <div v-motion-slide-bottom class="prose mx-auto text-foreground px-4 box-border md:px-0 text-xl">
+      <div v-motion-slide-bottom class="prose mx-auto text-base md:text-xl text-foreground px-4 box-border md:px-0">
         <ContentDoc path="/" />
       </div>
 
       <div v-motion-slide-bottom class="flex gap-4 justify-center">
-        <div class="w-20 h-20 rounded-lg cursor-pointer hover:scale-120 transition-all duration-300">
+        <div class="w-20 h-20 rounded-lg cursor-pointer hover:scale-125 transition-all duration-300">
           <a href="https://blog.dimples.top" class="w-full h-full flex justify-center flex-col items-center gap-y-2">
             <img src="https://blog.dimples.top/img/DI-logo.png" class="text-foreground w-10 h-10" >
             <div class="text-sm">My Blog</div>
           </a>
         </div>
         
-        <div class="w-20 h-20 rounded-lg cursor-pointer hover:scale-120 transition-all duration-300">
+        <div class="w-20 h-20 rounded-lg cursor-pointer hover:scale-125 transition-all duration-300">
           <a href="https://github.com/DimplesY" class="w-full h-full flex justify-center flex-col items-center gap-y-2">
             <div class="icon-[carbon--logo-github] w-10 h-10"/>
             <div class="text-sm">GitHub</div>
@@ -39,7 +39,7 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
         </div>
 
         <div>
-          <div class="w-20 h-20 rounded-lg cursor-pointer hover:scale-120 transition-all duration-300">
+          <div class="w-20 h-20 rounded-lg cursor-pointer hover:scale-125 transition-all duration-300">
             <a href="https://x.com/Dimples_agaoj" class="w-full h-full flex justify-center flex-col items-center gap-y-2">
               <div class="icon-[carbon--logo-x] w-10 h-10"/>
               <div class="text-sm">X</div>
@@ -48,7 +48,7 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
         </div>
 
         <div>
-          <div class="w-20 h-20 rounded-lg cursor-pointer  hover:scale-120 transition-all duration-300">
+          <div class="w-20 h-20 rounded-lg cursor-pointer  hover:scale-125 transition-all duration-300">
             <a href="https://juejin.cn/user/4266553197470408" class="w-full h-full flex justify-center flex-col items-center gap-y-2">
               <img src="https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/6c61ae65d1c41ae8221a670fa32d05aa.svg" class="text-foreground w-10 h-10" >
               <div class="text-sm">JueJin</div>
