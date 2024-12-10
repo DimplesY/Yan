@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import BlurReveal from '~/components/ui/BlurReveal.vue';
+
 </script>
 
 <template>
-  <div class="min-h-screen max-w-7xl mx-auto flex items-center">
+  <div class="min-h-screen max-w-7xl mx-auto flex items-center z-10">
     <main class="w-full bg-background text-foreground space-y-5">
 
       <NuxtImg v-motion-fade src="https://avatars.githubusercontent.com/u/51285767" class="rounded-full mx-auto block h-20 w-20 border shadow" format="webp" placeholder alt="DimplesY" />
@@ -13,13 +14,13 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
           :delay="0.2"
           :duration="0.75"
         >
-          <h1 class="text-xl md:text-3xl font-bold text-center">Hey, I'm DimplesY 👋</h1>
+          <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-center">Hey, I'm DimplesY 👋</h1>
         </BlurReveal>
       </ClientOnly>
 
 
 
-      <div v-motion-slide-bottom class="prose mx-auto text-base md:text-xl text-foreground px-4 box-border md:px-0">
+      <div v-motion-slide-bottom class="prose mx-auto text-base md:text-lg lg:text-xl text-foreground px-4 box-border">
         <ContentDoc path="/" />
       </div>
 
@@ -57,5 +58,7 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
         </div>
       </div>
     </main>
+
+    <div class="w-full h-full inset-0 pointer-events-none fixed bg-background bg-[url(https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png)] bg-repeat opacity-5"/>
   </div>
 </template>
