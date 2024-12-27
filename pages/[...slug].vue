@@ -4,9 +4,8 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
 </script>
 
 <template>
-  <div class="min-h-screen max-w-7xl mx-auto flex items-center z-10">
+  <div class="max-w-7xl mx-auto flex items-center z-10 flex-1">
     <main class="w-full bg-background text-foreground space-y-5">
-
       <NuxtImg v-motion-fade src="https://avatars.githubusercontent.com/u/51285767" class="rounded-full mx-auto block h-20 w-20 border shadow" format="webp" placeholder alt="DimplesY" />
 
       <ClientOnly>
@@ -17,8 +16,6 @@ import BlurReveal from '~/components/ui/BlurReveal.vue';
           <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-center">Hey, I'm DimplesY 👋</h1>
         </BlurReveal>
       </ClientOnly>
-
-
 
       <div v-motion-slide-bottom class="prose mx-auto text-base md:text-lg lg:text-xl text-foreground px-4 box-border">
         <ContentDoc path="/" />
