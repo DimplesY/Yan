@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen container max-w-7xl mx-auto text-foreground py-10 xl:py-20 box-border px-5 md:px-10 xl:px-20 border-x border-solid border-zinc-100">
+  <div class="min-h-screen container max-w-7xl mx-auto text-foreground py-10 xl:py-20 box-border px-5 md:px-10 xl:px-20 border-x border-solid border-border shadow-xs">
 
     <NuxtImg v-motion-fade src="https://avatars.githubusercontent.com/u/51285767" class="rounded-full block h-20 mx-auto md:mx-0 w-20 border shadow" format="webp" placeholder alt="DimplesY" />
 
