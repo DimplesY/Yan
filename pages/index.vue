@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen container mx-auto text-foreground py-20 px-5 md:px-0">
+  <div class="min-h-screen container max-w-7xl mx-auto text-foreground py-20 box-border px-5 md:px-10 xl:px-20 border-x border-solid border-zinc-100">
 
     <NuxtImg v-motion-fade src="https://avatars.githubusercontent.com/u/51285767" class="rounded-full block h-20 w-20 border shadow" format="webp" placeholder alt="DimplesY" />
 
@@ -29,13 +29,13 @@
       <div>
         <h2 class="text-2xl font-bold">Skills</h2>
         <ul class="grid grid-cols-2 lg:grid-cols-3 gap-2 mt-2">
-          <li>JavaScript/TypeScript</li>
-          <li>Vue</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Java</li>
-          <li>Python</li>
-          <li>Go</li>
+          <li class="h-10 grid items-center">JavaScript/TypeScript</li>
+          <li class="h-10 grid items-center">Vue</li>
+          <li class="h-10 grid items-center">React</li>
+          <li class="h-10 grid items-center">Node.js</li>
+          <li class="h-10 grid items-center">Java</li>
+          <li class="h-10 grid items-center">Python</li>
+          <li class="h-10 grid items-center">Go</li>
         </ul>
       </div>
     </div>
