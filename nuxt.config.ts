@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -5,19 +7,19 @@ export default defineNuxtConfig({
   css: ['./assets/css/main.css'],
   modules: [
     '@nuxt/eslint',
-    '@nuxt/content',
     '@nuxt/image',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-    '@nuxtjs/tailwindcss',
     '@nuxt/fonts',
     '@nuxtjs/color-mode',
   ],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
   postcss: {
     plugins: {
-      tailwindcss: {},
       autoprefixer: {},
     },
   },
@@ -32,12 +34,6 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
-  site: {
-    url: 'https://dimples.top',
-    name: 'DimplesY',
-  },
-
-  
   app: {
     head: {
       title: 'DimplesY',
