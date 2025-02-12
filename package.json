@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,6 +12,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/content": "^3.1.0",
     "@nuxt/fonts": "0.10.2",
     "@nuxt/image": "^1.9.0",
     "@nuxtjs/color-mode": "3.5.2",
@@ -32,6 +33,7 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "daisyui": "5.0.0-beta.7",
     "eslint": "^9.19.0",
     "postcss": "^8.5.1",
     "tailwind-merge": "^3.0.1",

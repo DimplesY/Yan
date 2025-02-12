@@ -1,4 +1,4 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -7,11 +7,12 @@ export default defineNuxtConfig({
   css: ['./assets/css/main.css'],
   modules: [
     '@nuxt/eslint',
+    '@nuxt/content',
     '@nuxt/image',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
     '@nuxt/fonts',
-    '@nuxtjs/color-mode',
+    // '@nuxtjs/color-mode',
   ],
   vite: {
     plugins: [
@@ -26,12 +27,14 @@ export default defineNuxtConfig({
   fonts: {
     provider: 'fontshare',
     families: [
-      {name: 'Manrope', provider: 'fontshare', }
+      { name: 'Manrope', provider: 'fontshare' },
     ],
   },
-  
-  colorMode: {
-    classSuffix: '',
+
+  eslint: {
+    config: {
+      standalone: false,
+    },
   },
 
   app: {
@@ -39,8 +42,8 @@ export default defineNuxtConfig({
       title: 'DimplesY',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
-    }
+    },
   },
 })

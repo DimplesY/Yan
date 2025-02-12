@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 @import "tailwindcss";
-
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-animate";
 
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+
 @theme {
   --font-alata: "Alata", sans-serif;
-  --color-background: oklch(0.99 0.00 0);
-  --color-foreground: oklch(0.13 0.03 262);
-  --color-border: oklch(0.97 0.00 286);
 }
 
 #__nuxt {
   -webkit-tap-highlight-color: transparent;
-  @apply w-full h-full font-alata bg-background text-foreground;
 } 
 
