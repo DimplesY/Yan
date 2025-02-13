@@ -11,26 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
-    '@nuxt/fonts',
-    // '@nuxtjs/color-mode',
   ],
   vite: {
     plugins: [
       tailwindcss(),
     ],
   },
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-    },
-  },
-  fonts: {
-    provider: 'fontshare',
-    families: [
-      { name: 'Manrope', provider: 'fontshare' },
-    ],
-  },
-
   eslint: {
     config: {
       standalone: false,
