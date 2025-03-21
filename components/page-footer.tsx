@@ -2,8 +2,6 @@ import { SiGithub } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 
 export function PageFooter() {
-  const fullYear = new Date().getFullYear()
-
   return (
     <div className="h-20 border-t flex items-center justify-center">
       <div className="container border-x h-full flex items-center justify-between p-10 box-border">

@@ -1,8 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { SiGithub } from '@icons-pack/react-simple-icons'
-import Link from 'next/link'
 export default function Page() {
   return (
     <main className="container mx-auto border-x h-full flex-1 box-border p-10 text-base">
@@ -29,10 +27,6 @@ export default function Page() {
               <span className="font-medium text-lg">{'Software Engineer'}</span>
               <span>{'/>'}</span>
             </span>
-          </div>
-
-          <div>
-
           </div>
         </div>
 
