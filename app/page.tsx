@@ -20,7 +20,7 @@ export default function Page() {
 
         <div className="mt-10 text-lg max-w-2xl flex items-center justify-between gap-5">
           <div className="flex">
-            <span className="mx-2 text-cyan-200 px-2 py-1 font-mono">
+            <span className="mx-2 text-red-400 dark:text-cyan-200 px-2 py-1 font-mono">
               <span>{'<'}</span>
               <span className="font-medium text-lg">{'Software Engineer'}</span>
               <span>{'/>'}</span>
