@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className="flex flex-col h-screen">
+          <div className="flex flex-col min-h-screen">
             <PageHeader />
             <ViewTransition name="page">{children}</ViewTransition>
             <PageFooter />

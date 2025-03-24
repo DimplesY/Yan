@@ -5,7 +5,7 @@ export function PageFooter() {
   return (
     <div className="h-20 border-t flex items-center justify-center">
       <div className="container border-x h-full flex items-center justify-between p-10 box-border">
-        <div className="text-xs opacity-50 flex items-center gap-2">
+        <div className="text-xs text-gray-500 flex items-center gap-2">
           <Link className="hover:underline" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
             CC BY-NC-SA 4.0
           </Link>
@@ -14,7 +14,7 @@ export function PageFooter() {
 
         <div>
           <Link href="https://github.com/dimplesY">
-            <div className="flex flex-col justify-center opacity-50 hover:text-cyan-200 items-center gap-1">
+            <div className="flex flex-col justify-center text-gray-500 hover:text-cyan-200 items-center gap-1">
               <SiGithub />
               <span className="text-xs">GitHub</span>
             </div>
