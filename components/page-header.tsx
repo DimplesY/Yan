@@ -21,7 +21,7 @@ export function PageHeader() {
             </li>
 
             <li>
-              <Link href="/blog" className={pathname === '/blog' ? 'opacity-100' : 'opacity-80'}>
+              <Link href="/post" className={pathname === '/blog' ? 'opacity-100' : 'opacity-80'}>
                 Blog
               </Link>
             </li>

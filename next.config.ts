@@ -1,9 +1,8 @@
 import type { NextConfig } from 'next'
-import createMDX from '@next/mdx'
+import { withContentlayer } from 'next-contentlayer'
 
 const nextConfig: NextConfig = {
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  transpilePackages: ['next-mdx-remote'],
+  pageExtensions: ['ts', 'tsx'],
   experimental: {
     viewTransition: true,
   },
@@ -17,6 +16,4 @@ const nextConfig: NextConfig = {
   }
 }
 
-const withMDX = createMDX({})
-
-export default withMDX(nextConfig)
+export default withContentlayer(nextConfig)
