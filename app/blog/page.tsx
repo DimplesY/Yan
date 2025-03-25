@@ -17,22 +17,14 @@ export interface Article {
   labels:                   Label[];
   state:                    string;
   locked:                   boolean;
-  assignee:                 null;
-  assignees:                any[];
-  milestone:                null;
   comments:                 number;
   created_at:               Date;
   updated_at:               Date;
-  closed_at:                null;
   author_association:       string;
   sub_issues_summary:       SubIssuesSummary;
-  active_lock_reason:       null;
   body:                     string;
-  closed_by:                null;
   reactions:                Reactions;
   timeline_url:             string;
-  performed_via_github_app: null;
-  state_reason:             null;
 }
 
 export interface Label {
@@ -89,7 +81,7 @@ export interface User {
 
 export default async function Page() {
   const response = await fetch('https://api.github.com/repos/DimplesY/Yan/issues')
-  const articles: Article[] = await response.json()
+  const articles = (await response.json()) as Article[]
 
   return (
     <main className="container mx-auto border-x h-full flex-1 box-border p-10 text-base">
