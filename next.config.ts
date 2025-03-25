@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   transpilePackages: ['next-mdx-remote'],
   experimental: {
-    mdxRs: true,
     viewTransition: true,
   },
   images: {
