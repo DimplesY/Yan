@@ -82,11 +82,11 @@ export default async function Page() {
   const articles = (await response.json()) as Article[]
 
   return (
-    <main className="container mx-auto border-x h-full flex-1 box-border p-10 text-base">
+    <main className="container mx-auto border-x h-full flex-1 box-border p-2 lg:p-10 text-base">
       <ul>
         {articles?.map((article) => (
-          <li key={article.id}>
-            <Link className={cn(buttonVariants({ variant: 'link'}), 'text-base')} href={`/post/${article.number}`}>{article.title}</Link>
+          <li key={article.id} className="">
+            <Link className={cn(buttonVariants({ variant: 'link'}), 'text-base whitespace-normal h-auto')} href={`/post/${article.number}`}>{article.title}</Link>
           </li>
         ))}
       </ul>

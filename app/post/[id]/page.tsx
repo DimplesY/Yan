@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   return (
     <main className="container mx-auto border-x h-full flex-1 box-border p-10 text-base">
-      <article className="prose prose-zinc dark:prose-invert mx-auto">
+      <article className="prose prose-zinc dark:prose-invert mx-auto whitespace-normal break-words">
         <MarkdownAsync remarkPlugins={[remarkGfm]}>{articles.body}</MarkdownAsync>
       </article>
     </main>
