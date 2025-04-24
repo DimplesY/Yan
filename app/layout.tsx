@@ -5,6 +5,7 @@ import { unstable_ViewTransition as ViewTransition } from 'react'
 import './globals.css'
 import { PageHeader } from '@/components/page-header'
 import { PageFooter } from '@/components/page-footer'
+import { PageLayout } from '@/components/page-layout'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,7 +38,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="flex flex-col min-h-screen">
             <PageHeader />
-            <ViewTransition name="page">{children}</ViewTransition>
+            <ViewTransition name="page">
+              <PageLayout>{children}</PageLayout>
+            </ViewTransition>
             <PageFooter />
           </div>
         </ThemeProvider>

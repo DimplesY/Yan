@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 export function PageHeader() {
   const pathname = usePathname()
   return (
-    <header className="w-full h-20 border-b-1">
-      <div className="border-x-1 mx-auto container h-full border-solid border-muted px-10 py-5 box-border flex justify-between items-center">
+    <header className="w-full h-20 border-b">
+      <div className="border-x mx-auto container h-full px-10 py-5 box-border flex justify-between items-center">
         <div className="text-lg font-bold">
           <Link href="/">DimplesY</Link>
         </div>
@@ -21,8 +21,8 @@ export function PageHeader() {
             </li>
 
             <li>
-              <Link href="/post" className={pathname === '/blog' ? 'opacity-100' : 'opacity-80'}>
-                Blog
+              <Link href="/resume" className={pathname === '/blog' ? 'opacity-100' : 'opacity-80'}>
+                Resume
               </Link>
             </li>
           </ul>
