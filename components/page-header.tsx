@@ -8,6 +8,10 @@ const navList = [
   {
     title: 'Home',
     href: '/',
+  },
+  {
+    title: 'Articles',
+    href: '/articles',
   }
 ]
 
@@ -28,10 +32,10 @@ export function PageHeader() {
                   key={index}
                   className={cn(
                     pathname === item.href && 'border-dashed border-1 border-border',
-                    'h-10 w-20 relative flex items-center justify-center rounded transition-all hover:border-dashed hover:border-1 hover:border-border',
+                    'h-10 w-20 px-4 relative flex items-center justify-center rounded transition-all hover:border-dashed hover:border-1 hover:border-border',
                   )}>
                   <Link href={item.href} className={pathname === item.href ? 'opacity-100' : 'opacity-80'}>
-                    Home
+                    {item.title}
                   </Link>
                 </li>
               )

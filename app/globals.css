@@ -129,6 +129,232 @@
   }
 }
 
+/* 文章内容样式 */
+@layer components {
+  .prose {
+    @apply max-w-none text-foreground;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-bold;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose h1 {
+    @apply text-2xl sm:text-3xl mt-6 sm:mt-8 mb-3 sm:mb-4 first:mt-0;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose h2 {
+    @apply text-xl sm:text-2xl mt-5 sm:mt-6 mb-2 sm:mb-3;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose h3 {
+    @apply text-lg sm:text-xl mt-4 sm:mt-5 mb-2;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose h4 {
+    @apply text-base sm:text-lg mt-3 sm:mt-4 mb-2;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose h5 {
+    @apply text-sm sm:text-base mt-3 mb-2;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose h6 {
+    @apply text-xs sm:text-sm mt-3 mb-2;
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .prose p {
+    @apply text-foreground leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base;
+  }
+  
+  .prose code {
+    @apply bg-muted text-foreground px-1 sm:px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono;
+  }
+  
+  .prose pre {
+    @apply bg-muted text-foreground p-3 sm:p-4 rounded-lg overflow-x-auto mb-3 sm:mb-4 border border-border relative;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0 text-xs sm:text-sm;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-3 sm:pl-4 italic text-muted-foreground my-3 sm:my-4 bg-muted/50 py-2 rounded-r text-sm sm:text-base;
+  }
+  
+  .prose ul,
+  .prose ol {
+    @apply pl-4 sm:pl-6 mb-3 sm:mb-4 text-foreground;
+  }
+  
+  .prose ul {
+    @apply list-disc;
+  }
+  
+  .prose ol {
+    @apply list-decimal;
+  }
+  
+  .prose li {
+    @apply mb-1 text-foreground text-sm sm:text-base;
+  }
+  
+  .prose a {
+    @apply text-primary hover:bg-clip-text hover:bg-gradient-to-r hover:to-cyan-500 hover:from-cyan-100 hover:text-transparent transition-all duration-300 underline decoration-primary/50 hover:decoration-transparent;
+  }
+  
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+  
+  .prose em {
+    @apply italic text-muted-foreground;
+  }
+  
+  .prose table {
+    @apply w-full border-collapse border border-border mb-3 sm:mb-4 bg-card rounded-lg overflow-hidden text-xs sm:text-sm;
+  }
+  
+  .prose th,
+  .prose td {
+    @apply border border-border p-2 sm:p-3 text-left;
+  }
+  
+  .prose th {
+    @apply bg-muted font-semibold text-foreground;
+  }
+  
+  .prose td {
+    @apply text-foreground;
+  }
+  
+  .prose img {
+    @apply max-w-full h-auto rounded-lg shadow-sm border border-border;
+  }
+  
+  .prose hr {
+    @apply border-border my-6 sm:my-8;
+  }
+  
+  /* 代码块语法高亮样式 */
+  .prose pre code .token.comment,
+  .prose pre code .token.prolog,
+  .prose pre code .token.doctype,
+  .prose pre code .token.cdata {
+    @apply text-muted-foreground italic;
+  }
+  
+  .prose pre code .token.keyword,
+  .prose pre code .token.tag,
+  .prose pre code .token.boolean,
+  .prose pre code .token.number,
+  .prose pre code .token.constant,
+  .prose pre code .token.symbol,
+  .prose pre code .token.deleted {
+    @apply text-red-400;
+  }
+  
+  .prose pre code .token.selector,
+  .prose pre code .token.attr-name,
+  .prose pre code .token.string,
+  .prose pre code .token.char,
+  .prose pre code .token.builtin,
+  .prose pre code .token.inserted {
+    @apply text-green-400;
+  }
+  
+  .prose pre code .token.operator,
+  .prose pre code .token.entity,
+  .prose pre code .token.url,
+  .prose pre code .token.variable {
+    @apply text-yellow-400;
+  }
+  
+  .prose pre code .token.atrule,
+  .prose pre code .token.attr-value,
+  .prose pre code .token.function,
+  .prose pre code .token.class-name {
+    @apply text-blue-400;
+  }
+  
+  .prose pre code .token.regex,
+  .prose pre code .token.important {
+    @apply text-purple-400;
+  }
+  
+  .prose pre code .token.punctuation {
+    @apply text-muted-foreground;
+  }
+  
+  .prose pre code .token.property {
+    @apply text-cyan-400;
+  }
+  
+  /* 改善列表样式 */
+  .prose ul > li::marker {
+    @apply text-primary;
+  }
+  
+  .prose ol > li::marker {
+    @apply text-primary font-semibold;
+  }
+  
+  /* 改善引用样式 */
+  .prose blockquote p:first-child::before {
+    content: '"';
+    @apply text-primary text-xl sm:text-2xl font-serif mr-1;
+  }
+  
+  .prose blockquote p:last-child::after {
+    content: '"';
+    @apply text-primary text-xl sm:text-2xl font-serif ml-1;
+  }
+  
+  /* 移动端特殊优化 */
+  @media (max-width: 640px) {
+    .prose {
+      @apply text-sm;
+    }
+    
+    .prose pre {
+      @apply -mx-4 rounded-none border-x-0;
+    }
+    
+    .prose table {
+      @apply -mx-4 rounded-none border-x-0;
+    }
+  }
+}
+
+/* 最强优先级 - 覆盖所有默认样式 */
+.prose h1,
+.prose h2, 
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: hsl(var(--foreground)) !important;
+  font-weight: 700 !important;
+}
+
+.prose p,
+.prose li {
+  color: hsl(var(--foreground)) !important;
+}
+
 
 @keyframes slide-out {
   0% {
