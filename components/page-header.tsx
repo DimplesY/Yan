@@ -1,7 +1,15 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+const navList = [
+  {
+    title: 'Home',
+    href: '/',
+  }
+]
 
 export function PageHeader() {
   const pathname = usePathname()
@@ -14,17 +22,20 @@ export function PageHeader() {
 
         <div>
           <ul className="flex gap-4">
-            <li>
-              <Link href="/" className={pathname === '/' ? 'opacity-100' : 'opacity-80'}>
-                Home
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/resume" className={pathname === '/blog' ? 'opacity-100' : 'opacity-80'}>
-                Resume
-              </Link>
-            </li>
+            {navList.map((item, index) => {
+              return (
+                <li
+                  key={index}
+                  className={cn(
+                    pathname === item.href && 'border-dashed border-1 border-border',
+                    'h-10 w-20 relative flex items-center justify-center rounded transition-all hover:border-dashed hover:border-1 hover:border-border',
+                  )}>
+                  <Link href={item.href} className={pathname === item.href ? 'opacity-100' : 'opacity-80'}>
+                    Home
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </div>

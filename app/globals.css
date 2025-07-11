@@ -2,6 +2,7 @@
 
 @plugin 'tailwindcss-animate';
 @plugin '@tailwindcss/typography';
+@plugin "@iconify/tailwind4";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
