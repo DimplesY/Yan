@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Page() {
   return (
-    <div className="h-screen flex items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden">
+    <div className="flex items-center flex-1 justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden">
       
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
