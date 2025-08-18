@@ -27,6 +27,11 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: 'DimplesY',
   description: "DimplesY's Profile",
+  alternates: {
+    types: {
+      'application/rss+xml': '/rss.xml',
+    },
+  },
 }
 
 export default function RootLayout({

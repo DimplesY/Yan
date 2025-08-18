@@ -1,6 +1,7 @@
 {
   "prettier.enable": true,
   "cSpell.words": [
+    "lerp",
     "Shiki",
     "shikijs"
   ]

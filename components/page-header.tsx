@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import { Rss } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -25,7 +26,7 @@ export function PageHeader() {
         </div>
 
         <div>
-          <ul className="flex gap-4">
+          <ul className="flex gap-4 items-center">
             {navList.map((item, index) => {
               return (
                 <li
@@ -40,6 +41,17 @@ export function PageHeader() {
                 </li>
               )
             })}
+            <li className="ml-2">
+              <Link 
+                href="/rss.xml" 
+                target="_blank"
+                className="h-10 w-10 flex items-center justify-center rounded transition-all hover:bg-muted opacity-80 hover:opacity-100"
+                title="RSS订阅"
+                aria-label="RSS订阅"
+              >
+                <Rss className="h-4 w-4" />
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
