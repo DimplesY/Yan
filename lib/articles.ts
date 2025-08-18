@@ -13,14 +13,6 @@ export interface Article {
   content: string;
 }
 
-export interface ArticleMetadata {
-  slug: string;
-  title: string;
-  date: string;
-  description: string;
-  tags: string[];
-}
-
 export function getArticleSlugs() {
   if (!fs.existsSync(articlesDirectory)) {
     return [];
@@ -56,7 +48,7 @@ export function getArticleBySlug(slug: string): Article | null {
   }
 }
 
-export function getAllArticles(): ArticleMetadata[] {
+export function getAllArticles(): Article[] {
   const slugs = getArticleSlugs();
   const articles = slugs
     .map(slug => {
@@ -69,15 +61,16 @@ export function getAllArticles(): ArticleMetadata[] {
         date: article.date,
         description: article.description,
         tags: article.tags,
+        content: article.content,
       };
     })
-    .filter((article): article is ArticleMetadata => article !== null)
+    .filter((article): article is Article => article !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   
   return articles;
 }
 
-export function getArticlesByTag(tag: string): ArticleMetadata[] {
+export function getArticlesByTag(tag: string): Article[] {
   const allArticles = getAllArticles();
   return allArticles.filter(article => 
     article.tags.some(t => t.toLowerCase() === tag.toLowerCase())

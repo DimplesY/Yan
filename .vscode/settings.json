@@ -1,8 +1,10 @@
 {
   "prettier.enable": true,
   "cSpell.words": [
+    "iconify",
     "lerp",
     "Shiki",
     "shikijs"
-  ]
+  ],
+  "css.lint.unknownAtRules": "ignore"
 }

@@ -1,6 +1,6 @@
-import { Feed } from 'feed';
-import type { ArticleMetadata } from './articles';
 import type { RSSConfig, RSSFeedItem } from '@/types/rss';
+import { Feed } from 'feed';
+import type { Article } from './articles';
 
 /**
  * 默认RSS配置
@@ -8,7 +8,7 @@ import type { RSSConfig, RSSFeedItem } from '@/types/rss';
 export const DEFAULT_RSS_CONFIG: RSSConfig = {
   title: 'DimplesY',
   description: "DimplesY's Blog - 技术分享与思考",
-  siteUrl: process.env.SITE_URL || 'https://www.dimples.top',
+  siteUrl: 'https://www.dimples.top',
   language: 'zh-CN',
   author: {
     name: 'DimplesY',
@@ -27,7 +27,7 @@ export const DEFAULT_RSS_CONFIG: RSSConfig = {
 /**
  * 将文章元数据转换为RSS feed项目
  */
-export function articleToRSSItem(article: ArticleMetadata, config: RSSConfig): RSSFeedItem {
+export function articleToRSSItem(article: Article, config: RSSConfig): RSSFeedItem {
   return {
     title: article.title,
     id: `${config.siteUrl}/articles/${article.slug}`,
@@ -43,7 +43,7 @@ export function articleToRSSItem(article: ArticleMetadata, config: RSSConfig): R
 /**
  * 创建RSS Feed实例
  */
-export function createRSSFeed(articles: ArticleMetadata[], config: RSSConfig = DEFAULT_RSS_CONFIG): Feed {
+export function createRSSFeed(articles: Article[], config: RSSConfig = DEFAULT_RSS_CONFIG): Feed {
   const limitedArticles = articles.slice(0, config.maxItems);
   const lastUpdated = limitedArticles.length > 0 
     ? new Date(limitedArticles[0].date) 

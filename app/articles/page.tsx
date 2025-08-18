@@ -84,13 +84,14 @@ export default async function ArticlesPage() {
                         <span className="hidden sm:inline">
                           {format(new Date(article.date), 'yyyy年MM月dd日', { locale: zhCN })}
                         </span>
+
                         <span className="sm:hidden">
                           {format(new Date(article.date), 'MM/dd', { locale: zhCN })}
                         </span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
-                        约 {Math.ceil(article.description.length / 100)} 分钟
+                        约 {Math.ceil(article.content.length / 500)} 分钟
                       </div>
                     </div>
                     
