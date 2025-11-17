@@ -14,7 +14,6 @@ export interface RSSConfig {
   copyright: string;
   feedLinks: {
     rss2: string;
-    atom: string;
   };
   cacheMaxAge: number;
   maxItems: number;

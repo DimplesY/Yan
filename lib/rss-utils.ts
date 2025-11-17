@@ -18,7 +18,6 @@ export const DEFAULT_RSS_CONFIG: RSSConfig = {
   copyright: `All rights reserved ${new Date().getFullYear()}, DimplesY`,
   feedLinks: {
     rss2: 'https://www.dimples.top/rss.xml',
-    atom: 'https://www.dimples.top/atom.xml',
   },
   cacheMaxAge: 3600,
   maxItems: 50,

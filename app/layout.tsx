@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/providers/theme-provider'
 import { ReactLenis } from 'lenis/react'
 import type { Metadata } from 'next'
 import { Fira_Code, Geist, Geist_Mono } from 'next/font/google'
-import { unstable_ViewTransition as ViewTransition } from 'react'
+import { ViewTransition } from 'react'
 import './globals.css'
 
 const geistSans = Geist({
