@@ -1,6 +1,6 @@
-import type { RSSConfig, RSSFeedItem } from '@/types/rss';
-import { Feed } from 'feed';
-import type { Article } from './articles';
+import type { RSSConfig, RSSFeedItem } from '@/types/rss'
+import { Feed } from 'feed'
+import type { Article } from './articles'
 
 /**
  * 默认RSS配置
@@ -21,7 +21,7 @@ export const DEFAULT_RSS_CONFIG: RSSConfig = {
   },
   cacheMaxAge: 3600,
   maxItems: 50,
-};
+}
 
 /**
  * 将文章元数据转换为RSS feed项目
@@ -35,18 +35,16 @@ export function articleToRSSItem(article: Article, config: RSSConfig): RSSFeedIt
     content: article.description,
     author: [config.author],
     date: new Date(article.date),
-    category: article.tags?.map(tag => ({ name: tag })) || [],
-  };
+    category: article.tags?.map((tag) => ({ name: tag })) || [],
+  }
 }
 
 /**
  * 创建RSS Feed实例
  */
 export function createRSSFeed(articles: Article[], config: RSSConfig = DEFAULT_RSS_CONFIG): Feed {
-  const limitedArticles = articles.slice(0, config.maxItems);
-  const lastUpdated = limitedArticles.length > 0 
-    ? new Date(limitedArticles[0].date) 
-    : new Date();
+  const limitedArticles = articles.slice(0, config.maxItems)
+  const lastUpdated = limitedArticles.length > 0 ? new Date(limitedArticles[0].date) : new Date()
 
   const feed = new Feed({
     title: config.title,
@@ -61,19 +59,19 @@ export function createRSSFeed(articles: Article[], config: RSSConfig = DEFAULT_R
     generator: 'Next.js Feed Generator',
     feedLinks: config.feedLinks,
     author: config.author,
-  });
+  })
 
   // 添加文章到feed
   limitedArticles.forEach((article) => {
     try {
-      const rssItem = articleToRSSItem(article, config);
-      feed.addItem(rssItem);
+      const rssItem = articleToRSSItem(article, config)
+      feed.addItem(rssItem)
     } catch (error) {
-      console.warn(`添加文章 ${article.slug} 到RSS feed时出错:`, error);
+      console.warn(`添加文章 ${article.slug} 到RSS feed时出错:`, error)
     }
-  });
+  })
 
-  return feed;
+  return feed
 }
 
 /**
@@ -85,7 +83,7 @@ export function createRSSHeaders(articleCount: number, lastUpdated: Date, cacheM
     'Cache-Control': `public, max-age=${cacheMaxAge}, s-maxage=${cacheMaxAge}`,
     'X-RSS-Items': articleCount.toString(),
     'Last-Modified': lastUpdated.toUTCString(),
-  };
+  }
 }
 
 /**
@@ -93,7 +91,7 @@ export function createRSSHeaders(articleCount: number, lastUpdated: Date, cacheM
  */
 export function formatErrorMessage(error: unknown, isDevelopment: boolean = false): string {
   if (isDevelopment) {
-    return `RSS生成失败: ${error instanceof Error ? error.message : '未知错误'}`;
+    return `RSS生成失败: ${error instanceof Error ? error.message : '未知错误'}`
   }
-  return 'RSS feed暂时不可用，请稍后再试';
+  return 'RSS feed暂时不可用，请稍后再试'
 }
