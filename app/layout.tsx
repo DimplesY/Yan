@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} antialiased bg-background`}>{children}</body>
     </html>
   )
 }

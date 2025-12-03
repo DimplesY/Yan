@@ -9,6 +9,13 @@
   --font-geist-sans: var(--font-geist-sans);
   --font-geist-mono: var(--font-geist-mono);
   --font-fira-code: var(--font-fira-code);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: oklch(0.2002 0 0);
+  --foreground: oklch(0.9731 0 0);
 }
 
 @layer utilities {
