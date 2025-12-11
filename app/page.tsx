@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 export default function Page() {
   return (
-    <div className="container mx-auto text-foreground h-screen">
+    <div className="container mx-auto text-foreground h-screen flex items-center flex-col">
       <nav className="w-full mx-auto h-16 rounded-full sticky top-5 z-10 backdrop-blur-2xl shadow font-geist-sans flex items-center px-10">
         <Link href="/" className="font-bold text-2xl">
           DimplesY
         </Link>
       </nav>
 
-      <div className="h-screen flex items-center justify-center">
+      <div className="flex h-full items-center justify-center">
         <div className="prose prose-invert lg:prose-lg prose-p:my-2 prose-h2:mt-4 prose-img:my-2 mx-auto font-geist-mono flex flex-col slide-enter-content">
           <div className="flex items-center justify-center md:justify-start">
             <Image
