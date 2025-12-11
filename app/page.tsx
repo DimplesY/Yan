@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <div className="container mx-auto text-foreground h-screen">
-      <nav className="w-full mx-auto h-16 rounded-full fixed top-5 z-10 backdrop-blur-2xl shadow font-geist-sans flex items-center px-10">
+      <nav className="w-full mx-auto h-16 rounded-full sticky top-5 z-10 backdrop-blur-2xl shadow font-geist-sans flex items-center px-10">
         <Link href="/" className="font-bold text-2xl">
           DimplesY
         </Link>
