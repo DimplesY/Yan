@@ -23,9 +23,9 @@ export default function Page() {
             />
           </div>
 
-          <h2 className="text-center md:text-left text-2xl font-bold">Hi, I'm DimplesY.</h2>
+          <h2 className="text-center md:text-left text-2xl font-bold">Hi, I&apos;m DimplesY.</h2>
 
-          <p>I'm a full-stack developer base in ChangSha.</p>
+          <p>I&apos;m a full-stack developer base in ChangSha.</p>
 
           <p>I love exploring interesting projects on GitHub and diving deep into the latest technology trends.</p>
 
