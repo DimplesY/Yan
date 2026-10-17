@@ -7,7 +7,7 @@ import type { Article } from './articles'
  */
 export const DEFAULT_RSS_CONFIG: RSSConfig = {
   title: 'DimplesY',
-  description: "DimplesY's Blog - 技术分享与思考",
+  description: 'AI 应用开发者，记录持续学习、独立产品构建与商业探索。',
   siteUrl: 'https://www.dimples.top',
   language: 'zh-CN',
   author: {

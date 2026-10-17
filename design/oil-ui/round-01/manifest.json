@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "DimplesY · 博客设计探索",
+  "round": "01",
+  "brief": "同一位开发者、同一组文章，探索三种不同的阅读与个人表达方式。推荐 01「独立刊物」。本轮为桌面首屏视觉方案，文章为共用拟稿。",
+  "nativeViewport": "1440x900",
+  "candidates": [
+    {
+      "id": "editorial",
+      "name": "独立刊物",
+      "concept": "把博客当作一份由你亲自编辑的刊物，让文字成为主角。",
+      "typography": "Georgia 99px 刊头 / 宋体 57px 主标题 / 苹方 14–16px 正文",
+      "palette": [
+        "#f5f2e9",
+        "#262820",
+        "#883e42"
+      ],
+      "traits": [
+        "横向刊头与双线分隔",
+        "一篇主文 + 三篇短索引",
+        "宋体标题与酒红色注记"
+      ],
+      "source": "editorial.html"
+    },
+    {
+      "id": "index",
+      "name": "开发者索引",
+      "concept": "像打开自己的代码工作区一样，直接进入清晰、有秩序的文章目录。",
+      "typography": "系统黑体 38px 标题 / 21px 文章 / Menlo 12–13px 日期与序号",
+      "palette": [
+        "#132324",
+        "#0c1b1c",
+        "#c6ea81"
+      ],
+      "traits": [
+        "纵向身份侧栏",
+        "通栏文章表与日期对齐",
+        "深青墨色与黄绿定位"
+      ],
+      "source": "index.html"
+    },
+    {
+      "id": "garden",
+      "name": "数字花园",
+      "concept": "把技术和日常放在同一片生长中的花园里，让读者先认识你。",
+      "typography": "系统黑体 48px 宣言 / 宋体 36px 主文 / 14px 正文",
+      "palette": [
+        "#f0e8df",
+        "#253aa2",
+        "#b7442b",
+        "#e3d49e"
+      ],
+      "traits": [
+        "个人引言与错落笔记",
+        "蓝墨、陶红与纸张色块",
+        "星号与不对称圆角呼应"
+      ],
+      "source": "garden.html"
+    }
+  ]
+}

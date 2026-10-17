@@ -1,46 +1,96 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { getAllArticles, getAllTags, getArticlesByTag } from '@/lib/articles'
 
-export default function Page() {
+type Props = { searchParams: Promise<{ tag?: string | string[] }> }
+
+export default async function Page({ searchParams }: Props) {
+  const { tag } = await searchParams
+  const activeTag = typeof tag === 'string' ? tag : ''
+  const articles = activeTag ? getArticlesByTag(activeTag) : getAllArticles()
+  const tags = getAllTags()
+
   return (
-    <div className="container mx-auto text-foreground h-screen flex items-center flex-col">
-      <nav className="w-full mx-auto h-16 rounded-full sticky top-5 z-10 backdrop-blur-2xl shadow font-geist-sans flex items-center px-10">
-        <Link href="/" className="font-bold text-2xl">
-          DimplesY
-        </Link>
-      </nav>
-
-      <div className="flex h-full items-center justify-center">
-        <div className="prose prose-invert lg:prose-lg prose-p:my-2 prose-h2:mt-4 prose-img:my-2 mx-auto font-geist-mono flex flex-col slide-enter-content">
-          <div className="flex items-center justify-center md:justify-start">
-            <Image
-              src="https://avatars.githubusercontent.com/u/51285767"
-              width={240}
-              height={240}
-              alt="DimplesY"
-              className="rounded-full size-20"
-              priority
-            />
-          </div>
-
-          <h2 className="text-center md:text-left text-2xl font-bold">Hi, I&apos;m DimplesY.</h2>
-
-          <p>I&apos;m a full-stack developer base in ChangSha.</p>
-
-          <p>I love exploring interesting projects on GitHub and diving deep into the latest technology trends.</p>
-
-          <p>
-            Passionate about coding and constantly learning new technologies. Working with <code>JavaScript</code>,{' '}
-            <code>TypeScript</code>, <code>Java</code>, and <code>Python</code>, while exploring <code>Rust</code> and{' '}
-            <code>Go</code>.
-          </p>
-
-          <p className="flex items-center gap-2 cursor-pointer">
-            <i className="icon-[carbon--logo-github]" />
-            <a href="https://github.com/DimplesY">Github</a>
-          </p>
+    <main id="main-content" className="index-page page-enter">
+      <div className="index-heading">
+        <div>
+          <h1>
+            文章索引<span>.</span>
+          </h1>
+          <p>记录 · 构建</p>
         </div>
+        <a href="/rss.xml" className="outline-link">
+          订阅 RSS <span aria-hidden="true">↗</span>
+        </a>
       </div>
-    </div>
+      <nav className="topic-tabs" aria-label="按主题浏览">
+        <Link href="/" className={!activeTag ? 'current' : undefined} aria-current={!activeTag ? 'page' : undefined}>
+          全部文章
+        </Link>
+        {tags.map((item) => (
+          <Link
+            key={item}
+            href={`/?tag=${encodeURIComponent(item)}`}
+            className={item === activeTag ? 'current' : undefined}
+            aria-current={item === activeTag ? 'page' : undefined}>
+            {item}
+          </Link>
+        ))}
+      </nav>
+      {articles.length ? (
+        <>
+          <div className="column-head" aria-hidden="true">
+            <span>#</span>
+            <span>标题 / 摘要</span>
+            <span>主题</span>
+            <span>发布日期</span>
+          </div>
+          <section className="article-index" aria-label={activeTag ? `${activeTag} 文章` : '全部文章'}>
+            {articles.map((article, i) => (
+              <article className="index-row" key={article.slug}>
+                <span className="row-number" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="row-content">
+                  <h2>
+                    <Link href={`/articles/${article.slug}`}>
+                      {article.title}
+                      <span aria-hidden="true" className="row-arrow">
+                        ↗
+                      </span>
+                    </Link>
+                  </h2>
+                  <p>{article.description}</p>
+                </div>
+                <div className="row-tags">
+                  {article.tags.map((item) => (
+                    <Link key={item} href={`/?tag=${encodeURIComponent(item)}`}>
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+                <time className="row-date" dateTime={article.date}>
+                  {article.date.replaceAll('-', '.')}
+                </time>
+              </article>
+            ))}
+          </section>
+          <p className="index-count">
+            共 {articles.length} 篇文章 <span>按日期从新到旧</span>
+          </p>
+        </>
+      ) : (
+        <div className="empty-state">
+          <h2>{activeTag ? '这个主题还没有文章。' : '文字正在路上。'}</h2>
+          <p>
+            {activeTag ? '试试其他主题，或回到全部文章。' : '这里将记录 AI 应用、产品构建与商业探索。欢迎下次再来。'}
+          </p>
+          {activeTag && (
+            <Link className="text-link" href="/">
+              查看全部文章 →
+            </Link>
+          )}
+        </div>
+      )}
+    </main>
   )
 }
