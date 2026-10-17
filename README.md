@@ -4,6 +4,8 @@ Next.js 博客，采用「开发者索引」设计，支持亮色与暗色模式
 
 ## 本地运行
 
+开发环境建议使用 Node.js 24；新版 lint-staged 要求至少 Node.js 22.22.1。
+
 ```sh
 pnpm install
 pnpm dev
@@ -48,6 +50,8 @@ tags:
 “关于我”导航跳转到 `/articles/about`，介绍内容保存在 `content/articles/about.md`，可直接用 Markdown 修改。它与其他文章一样出现在文章索引和 RSS 中。
 
 ## 检查
+
+`tsc` 使用 TypeScript 7（`@typescript/native` 别名）；`typescript` 使用官方 TypeScript 6 API 兼容包，供 Next.js 和 ESLint 调用。两者按[官方并行安装方案](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0)配置。
 
 ```sh
 pnpm exec tsc --noEmit

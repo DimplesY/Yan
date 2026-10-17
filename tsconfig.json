@@ -5,6 +5,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "types": ["node", "react-syntax-highlighter"],
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
