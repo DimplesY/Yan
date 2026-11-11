@@ -58,7 +58,7 @@ typography:
     fontWeight: 400
     lineHeight: 1.95
   body-en:
-    fontFamily: "Lora, Georgia, 'Times New Roman', serif"
+    fontFamily: "Lora, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
     fontSize: '17px'
     fontWeight: 400
     lineHeight: 1.95
@@ -70,6 +70,56 @@ typography:
   metadata:
     fontFamily: "'SFMono-Regular', Consolas, 'Liberation Mono', monospace"
     fontSize: '13px'
+    fontWeight: 400
+    lineHeight: 1.8
+  lead:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '16px'
+    fontWeight: 400
+    lineHeight: 1.9
+  section-heading:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '26px'
+    fontWeight: 550
+    lineHeight: 1.5
+  subheading:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '22px'
+    fontWeight: 550
+    lineHeight: 1.5
+  minor-heading:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '19px'
+    fontWeight: 550
+    lineHeight: 1.5
+  section-heading-mobile:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '24px'
+    fontWeight: 550
+    lineHeight: 1.5
+  display-mobile:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '30px'
+    fontWeight: 550
+    lineHeight: 1.45
+  title-mobile:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '20px'
+    fontWeight: 500
+    lineHeight: 1.55
+  table:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '15px'
+    fontWeight: 400
+    lineHeight: 1.8
+  empty-state:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    fontSize: '28px'
+    fontWeight: 550
+    lineHeight: 1.6
+  meta-mobile:
+    fontFamily: "'SFMono-Regular', Consolas, 'Liberation Mono', monospace"
+    fontSize: '12px'
     fontWeight: 400
     lineHeight: 1.8
 rounded:
@@ -106,6 +156,12 @@ components:
     textColor: '{colors.dark-foreground}'
     rounded: '{rounded.sm}'
     padding: '22px 24px'
+  code-copy:
+    backgroundColor: '{colors.dark-code}'
+    textColor: '{colors.dark-muted}'
+    borderColor: '{colors.dark-rule}'
+    rounded: '{rounded.sm}'
+    padding: '3px 8px'
 ---
 
 # Design System: DimplesY
@@ -114,7 +170,7 @@ components:
 
 **Creative North Star: "开发者的编辑桌"**
 
-一个安静、清晰、精确的个人写作空间。深青墨底色承托文字，浅草绿标记当前位置与可进入的内容；浅色主题则像雾白纸上的绿墨。路径式面包屑、等宽日期、品牌尾部的下划线共同传达开发者气质，中文排版保留温度。
+一个安静、清晰、精确的个人写作空间。深青墨底色承托文字，浅草绿标记当前位置与可进入的内容；浅色主题则像雾白纸上的绿墨。路径式面包屑、等宽日期与手写签名共同传达开发者气质，中文排版保留温度。
 
 整体平面、细线分区，组件克制。文章索引依靠列对齐与横向分隔线组织信息，长文依靠有限行宽、宽松行距和清晰标题层级组织阅读。空白是布局的一部分，内容较少时无需填满屏幕。
 
@@ -133,7 +189,7 @@ components:
 
 ### Primary
 
-- **浅草绿 / 绿墨**：对应 dark-accent / light-accent，用于品牌下划线、首页标题句点、当前主题、文章链接、引用竖线、键盘焦点和索引首条标题。
+- **浅草绿 / 绿墨**：对应 dark-accent / light-accent，用于首页标题句点、当前主题、文章链接、引用竖线、键盘焦点、索引首条标题，以及签名悬停。
 - **选中底色与墨色**：对应各主题的 active / active-text，用于桌面当前导航项和文本选区。深色主题的 accent 与 active 相同，浅色主题的强调文字与选中底色分离。
 
 ### Neutral
@@ -150,15 +206,19 @@ components:
 
 颜色的精确值见 frontmatter。语法颜色对应 syntax-comment、syntax-keyword、syntax-string、syntax-function、syntax-number、syntax-property；操作符和标点复用 muted。不要将语法用紫、蓝、粉等颜色扩展成常规 UI 强调色。
 
+shadcn 的 token 名在 `app/globals.css` 的 `@theme inline` 中指向这些变量：primary 对应 accent，secondary 与 accent 对应 hover，muted 面用 hover、muted 文字用 muted，border 与 input 用 rule，code 用 code，圆角统一 3px。新增组件时优先用这些别名，不再定义第二套色值。
+
 **The Semantic Pair Rule.** 使用前景、背景和交互状态的同主题配对；新增样式引用现有语义变量，不将深色主题的浅草绿直接用于浅色正文链接。
 
 ## Typography
 
-**Display / Body Font:** 系统无衬线字体栈，中文优先系统可用的苹方与微软雅黑。没有独立展示字体；英文正文使用下述衬线字体。
+**Display / Body Font:** 系统无衬线字体栈，中文优先系统可用的苹方与微软雅黑。没有独立展示字体；正文中的英文使用下述衬线字体。
 
-**Label / Mono Font:** SFMono-Regular、Consolas、Liberation Mono、monospace，用于面包屑、索引编号、日期及代码；主题名称、标签与按钮仍使用无衬线字体。
+**Label / Mono Font:** SFMono-Regular、Consolas、Liberation Mono、monospace，用于索引编号、日期及代码。
 
-**English Body Font:** 标记为 `lang: en` 的文章正文使用 Lora（body-en），字号和行距沿用 body，移动端同样缩为 16px。通过 `next/font/google` 提供常规与斜体可变字体，构建时下载并由本站托管，使用 swap 显示策略。关闭预加载，仅在英文正文实际使用时加载。正文内标题仍使用系统无衬线，代码仍使用等宽字体。中文文章及其中穿插的英文保留无衬线；未标记语言时默认 `zh-CN`。
+**Workspace Bar:** 内容区顶部横条（面包屑与主题按钮）使用正文衬线栈（Lora → 系统无衬线）：拉丁字母走 Lora，中文标签回落无衬线，与正文一致。字体变量定义在根布局的 `body` 上，因此所有页面都能用。
+
+**Mixed Body Font:** 正文使用 `Lora → 系统无衬线` 的混合字体栈（body-en），由浏览器逐字选择：拉丁字母、数字与半角标点用 Lora，CJK 字符与全角标点回落到系统中文无衬线。作者不再标记 `lang`，中英混排无需任何配置。Lora 通过 `next/font/google` 提供常规与斜体可变字体，构建时下载并由本站托管，使用 swap 显示策略。正文内标题仍使用系统无衬线，代码仍使用等宽字体；字号、行距与移动端 16px 缩字沿用 body。
 
 字重温和，标题主要通过字号、留白与少量字距收紧形成层级。frontmatter 的 headline 对应首页标题，reading-headline 对应文章标题，body 对应文章正文，并非全站所有文字的基础字号。
 
@@ -167,10 +227,10 @@ components:
 | 首页标题                   | 桌面使用 headline；移动端缩为 30px，保留强调句点                    |
 | 文章标题                   | 使用 reading-headline；移动端固定 30px，支持平衡换行与长词断行      |
 | 索引条目标题               | 使用 title；移动端 20px，整段可换行                                 |
-| 文章正文                   | 使用 body；移动端 16px，行高仍为 1.95                               |
+| 文章正文                   | 使用 body 与 body-en 混合栈；移动端 16px，行高仍为 1.95             |
 | 正文二级 / 三级 / 四级标题 | 26 / 22 / 19px，字重 550、行高 1.5；二级标题移动端 24px             |
 | 摘要与辅助文字             | 索引摘要用 summary；文章导语为 16px / 1.9；导航与元信息多为 13–14px |
-| 品牌                       | 25px、字重 650、字距 -1px；移动端 24px                              |
+| 品牌                       | 手写签名 SVG，桌面 36px 高（约 135px 宽），移动端 30px              |
 | 代码                       | 正文字号的 0.85 倍，等宽字体、行高 1.8                              |
 
 **The Quiet Hierarchy Rule.** 保持正文宽松、辅助文字收敛，延续现有的中等字重层级；不要把导航或日期提升为大号展示文字。
@@ -189,8 +249,8 @@ components:
 | 大于 1100px | 完整侧栏与四列索引 |
 | 701–1100px | 侧栏 210px，左右内边距 22px；索引隐藏主题列，列宽改为 36px、弹性标题、100px 日期 |
 | 不大于 700px | 框架转为纵向；侧栏变顶部导航，左右 24px，隐藏品牌说明与侧栏底部 RSS；当前项改为透明底、绿色文字与底部细线 |
-| 不大于 700px | 工作区左右 24px，页眉高 60px；隐藏索引列头，条目改为 27px 编号加弹性标题，日期放在标题下方；箭头常显 |
-| 不大于 700px | 首页标题区缩为 25px 0 12px，说明隐藏；主题导航允许换行；阅读栏顶部间隔 28px；代码块内边距 17px；隐藏页脚 GitHub 链接 |
+| 不大于 700px | 工作区左右 24px；工作区页眉整体隐藏，主题按钮移入侧栏首行；隐藏面包屑与索引列头，条目改为 27px 编号加弹性标题，日期放在标题下方；箭头常显 |
+| 不大于 700px | 首页标题区缩为 25px 0 12px，说明隐藏；主题导航允许换行；阅读栏顶部间隔 28px；代码块内边距 16px、头部条内边距收紧；隐藏页脚 GitHub 链接 |
 
 **The Reading Width Rule.** 索引利用工作区宽度，文章正文保留最大阅读栏；长代码和表格在自身容器内横向滚动，不撑宽整个页面。
 
@@ -202,19 +262,33 @@ components:
 
 ## Shapes
 
-导航项、主题按钮、订阅链接、行内代码和代码块共享微圆角 sm。大面积页面分区保持直线边缘；边框通常为 1px，选中指示线为 2px。主题按钮图案是小圆形的半实心符号，属于功能图标，不构成胶囊组件体系。
+导航项、主题按钮、订阅链接、行内代码和代码块共享微圆角 sm。大面积页面分区保持直线边缘；边框通常为 1px，选中指示线为 2px。主题按钮与导航使用 15px 线性图标，属于功能图标，不构成胶囊组件体系。
 
 ## Components
 
+### Brand signature
+
+侧栏顶部是「Dimples Yan」的手写签名，以纯路径内联 SVG 实现（`components/brand-signature.tsx`）：不加载额外字体，不依赖运行时文字渲染，颜色跟随 `currentColor`。桌面 36px 高（约 135px 宽），移动端 30px；正文色墨迹，悬停时转为强调色。链接保持 `aria-label` 并在 SVG 上标记 `aria-hidden`，所以无障碍名称仍为「Dimples Yan 博客首页」。
+
+### Breadcrumb / reading progress
+
+面包屑由 `usePathname` 生成真实路径：`~/ dimplesy / writing` 之后追加当前文章 slug（`aria-current="page"`，超过 34ch 省略）。`dimplesy` 与 `writing` 都是回首页的链接，`~/` 仅作装饰。
+
+文章页在视口顶边显示 2px 强调色阅读进度线（`position: fixed`），由 CSS `animation-timeline: scroll(root block)` 驱动，无需 JS；不支持滚动驱动动画的浏览器不显示这条线。`prefers-reduced-motion` 下所有动画停用，这是唯一的例外性损失。
+
+### Back to top
+
+滚动超过 600px 后，视口右下角淡入一枚 38px 方形图标按钮（移动端 36px，距边 16px）：页面底色填充、1px rule 描边、muted 的 ArrowUp 线性图标（1.5 描边，16px），悬停转为强调色描边与文字，按下下沉 1px。未出现时 `visibility: hidden` 且 `tabindex="-1"`、`aria-hidden="true"`，滚下后才进入 Tab 顺序；页脚进入视口时按钮淡出，避免压住页脚右侧的外链。点击调用 `window.scrollTo(0, 0)`，平滑与否交给 `html { scroll-behavior }`，因此 `prefers-reduced-motion` 下自动变成瞬间跳转。颜色与按下反馈来自 shadcn `Button` 的 `toggle` 变体，尺寸、浮起底色与显隐状态写在本项目 CSS 里。
+
 ### Navigation
 
-桌面主导航纵向排布，间隔 9px，距品牌区域 61px。普通项使用 muted，悬停切为正文色和 hover 底色；当前项使用 active / active-text，并显示方向箭头。移动端横排、间隔 20px，当前项改为强调文字和底部 2px 状态线。保持 aria-current 与视觉选中状态一致。
+桌面主导航纵向排布，间隔 9px，距品牌区域 61px。每项前置 15px 线性图标（lucide，描边 1.5，跟随 currentColor）：文章索引用 Files、关于我用 UserRound、GitHub 用 simple-icons 品牌标记，外链箭头推到行尾。普通项使用 muted，悬停切为正文色和 hover 底色；当前项使用 active / active-text。移动端横排、间隔 20px 且隐藏图标，当前项改为强调文字和底部 2px 状态线。保持 aria-current 与视觉选中状态一致。
 
 ### Theme toggle / Outline link
 
-主题切换为透明底、细边框、微圆角按钮，最小宽度 110px，内部图案与文字间隔 10px。悬停时边框变强调色并出现 hover 底色；客户端尚未挂载时禁用并降低至 0.6 不透明度。移动端最小宽度 94px，内边距 8px 9px。
+主题切换为透明底、细边框、微圆角按钮，最小宽度 110px，内部 15px 太阳／月亮图标（指示将切换到的模式）与文字间隔 10px；挂载前固定显示月亮，避免水合不一致。悬停时边框变强调色并出现 hover 底色；客户端尚未挂载时禁用并降低至 0.6 不透明度。移动端最小宽度 94px，内边距 8px 9px。它和代码复制按钮共用 shadcn（Base UI）的 `Button`，分别使用 `toggle` 与 `quiet` 变体：颜色、描边、悬停、按下与禁用状态由变体提供，`.theme-toggle` 只保留尺寸与响应式。桌面实例位于工作区页眉右侧；移动端整个页眉隐藏，同一组件以 `.sidebar-theme` 出现在侧栏首行（签名右侧），隐藏实例为 `display: none`，不进入无障碍树。
 
-RSS 订阅为描边链接，文字与箭头间隔 14px，悬停边框和文字变为强调色；移动端内边距 8px 12px。当前项目没有通用实心主按钮、表单输入框、弹窗或独立卡片组件，不应从文档推断这些组件已存在。
+RSS 订阅为描边链接，前置 15px RSS 图标，文字与箭头间隔 14px，悬停边框和文字变为强调色；移动端内边距 8px 12px。侧栏底部的文本订阅链接也带同一图标。基础按钮来自 shadcn 的 Base UI 版本（`components/ui/button.tsx`），变体按本规范的描边控件改写并新增 `quiet`；项目仍没有表单输入框、弹窗与独立卡片组件，不应从文档推断这些组件已存在。
 
 ### Topic tabs
 
@@ -222,11 +296,13 @@ RSS 订阅为描边链接，文字与箭头间隔 14px，悬停边框和文字�
 
 ### Article index row
 
-由编号、标题摘要、主题文字与日期组成，以底部分隔线串联。首条标题始终用强调色；其他标题悬停时强调。桌面箭头在标题悬停或键盘聚焦时由左侧 3px 偏移淡入，移动端常显。主题是文字链接，不是带底色标签。
+由编号、标题摘要、主题文字与日期组成，以底部分隔线串联。首条标题始终用强调色；其他标题悬停时强调。桌面箭头在标题悬停或键盘聚焦时由左侧 3px 偏移淡入，移动端常显。主题是文字链接，不是带底色标签。文章少于 6 篇时索引切换到紧凑模式：隐藏列头、主题列与独立日期列，条目退为编号 + 内容两列，主题与日期以 12px 等宽文字内联在摘要下方（`.row-inline-meta`）；计数行只保留「按日期从新到旧」。
 
 ### Markdown reading
 
-正文链接常显强调色和下划线，下划线偏移 4px。引用以强调色的 2px 左边线、24px 左侧留白和 muted 文字呈现。代码使用 code 底色、rule 边框与微圆角，保留空白与独立横向滚动；语法高亮由主题变量驱动。表格采用底部分隔线、12px 16px 单元格内边距、代码底色表头，外层提供可聚焦的横向滚动区域。图片等比缩放、居中、不超出正文。
+正文链接常显强调色和下划线，下划线偏移 4px。引用以强调色的 2px 左边线、24px 左侧留白和 muted 文字呈现。
+
+代码块由三部分组成：**头部条**（左侧语言标签 11px 等宽 muted，右侧 quiet 变体的「换行」「复制全文」两个小按钮，带 WrapText / Copy 图标，复制成功与失败时分别换成 Check 与 TriangleAlert，底部 1px rule 分隔）、**代码区**、以及超过 40 行时出现的**展开/收起条**（`展开全部 · 共 N 行`）。长行（>100 字符）默认开启自动折行并取消横向滚动；关闭折行时保留 `pre` 横向滚动，右缘出现 36px 渐隐提示还有内容。折叠态最大高度 520px，底部 72px 渐隐。复制读取源文本而不是 DOM，成功态 1.6s 后恢复；失败时按钮变「复制失败」，并把代码内容选中，`role="status"` 播报结果。表格采用底部分隔线、15px 字号、12px 16px 单元格内边距、代码底色表头，外层提供可聚焦的横向滚动区域。图片等比缩放、居中、不超出正文。
 
 ### Empty state / Footer
 

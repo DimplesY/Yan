@@ -2,6 +2,7 @@
 title: '关于我'
 date: '2026-10-17'
 description: 'AI Builder，持续学习，构建自己的产品，探索商业价值。'
+unlisted: true
 tags:
   - 关于我
 ---

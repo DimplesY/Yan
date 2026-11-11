@@ -1,21 +1,13 @@
 import type { Metadata } from 'next'
-import { Lora } from 'next/font/google'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { MarkdownCode } from '@/components/markdown-code'
+import { CodeBlock } from '@/components/code-block'
+import { MarkdownCode, readCodeChild } from '@/components/markdown-code'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
 
 type Props = { params: Promise<{ slug: string }> }
-
-const readingSerif = Lora({
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-  variable: '--font-reading-serif',
-  display: 'swap',
-  preload: false,
-})
 
 export function generateStaticParams() {
   return getAllArticles().map(({ slug }) => ({ slug }))
@@ -48,21 +40,25 @@ export default async function ArticlePage({ params }: Props) {
             <span>{article.tags.join(' · ')}</span>
             <time dateTime={article.date}>{article.date.replaceAll('-', '.')}</time>
           </div>
-          <h1 lang={article.lang}>{article.title}</h1>
-          {article.description && (
-            <p className="reading-description" lang={article.lang}>
-              {article.description}
-            </p>
-          )}
+          <h1>{article.title}</h1>
+          {article.description && <p className="reading-description">{article.description}</p>}
           <div className="byline">
             DimplesY <span aria-hidden="true">/</span> AI 应用开发者
           </div>
         </header>
-        <div className={`article-body ${readingSerif.variable}`} lang={article.lang}>
+        <div className="article-body">
           <Markdown
             remarkPlugins={[remarkGfm]}
             components={{
               code: MarkdownCode,
+              pre: ({ children }) => {
+                const { language, source } = readCodeChild(children)
+                return (
+                  <CodeBlock language={language} source={source}>
+                    {children}
+                  </CodeBlock>
+                )
+              },
               table: ({ children }) => (
                 <div className="table-scroll" tabIndex={0} role="region" aria-label="文章表格">
                   <table>{children}</table>

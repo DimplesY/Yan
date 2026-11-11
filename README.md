@@ -42,7 +42,8 @@ tags:
 ```
 
 - `title`、`date` 必填；日期为 `YYYY-MM-DD`，建议加引号。`description`、`tags` 可省略。
-- 英文文章添加 `lang: en`，正文使用通过 `next/font/google` 加载的 Lora 衬线字体；省略 `lang` 或填写 `lang: zh-CN` 时保留中文无衬线正文。标题、导航和代码字体不受影响；语言由作者标记，不自动检测。字体在构建时下载并由站点自托管，构建环境需要能访问 Google Fonts。
+- 添加 `unlisted: true` 的页面不进入首页索引、主题筛选和 RSS，但仍生成 `/articles/<文件名>` 并可直接访问；「关于我」即用此方式只保留在导航里。
+- 正文中英混排自动分工：拉丁字母与半角标点用衬线字体，中文与全角标点用无衬线字体，无需在 frontmatter 标记语言。具体字体与规则见 [DESIGN.md](DESIGN.md) 的 Typography。
 - 文件名就是 URL：上面的文章地址为 `/articles/hello-world`。文件名建议使用英文小写和短横线。
 - 首页按日期倒序展示，支持按主题筛选。`/rss.xml` 输出最近文章的摘要，条数与站点信息由 [lib/rss-utils.ts](lib/rss-utils.ts) 中的默认配置控制。
 - 图片放进 `public/images/`，引用方式为 `![说明](/images/photo.jpg)`。
@@ -53,7 +54,7 @@ tags:
 
 ## 关于我
 
-“关于我”导航跳转到 `/articles/about`，介绍内容保存在 `content/articles/about.md`，可直接用 Markdown 修改。它与其他文章一样出现在文章索引和 RSS 中。
+“关于我”导航跳转到 `/articles/about`，介绍内容保存在 `content/articles/about.md`，可直接用 Markdown 修改。该文件标记为 `unlisted: true`，只出现在导航里，不进入索引与 RSS。
 
 ## 检查
 

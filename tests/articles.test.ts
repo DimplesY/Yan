@@ -21,6 +21,10 @@ before(async () => {
   )
   fs.writeFileSync(path.join(directory, 'invalid.md'), "---\ntitle: Invalid\ndate: '2026-02-30'\n---\nBody")
   fs.writeFileSync(
+    path.join(directory, 'hidden.md'),
+    "---\ntitle: Hidden\ndate: '2026-10-16'\nunlisted: true\ntags: [Hidden]\n---\nBody",
+  )
+  fs.writeFileSync(
     path.join(directory, 'bad-tags.md'),
     "---\ntitle: Bad tags\ndate: '2026-10-17'\ntags: invalid\n---\nBody",
   )
@@ -41,7 +45,7 @@ test('reads quoted and YAML dates, supplies optional fields, and sorts newest fi
     errors.push(args)
   }
   try {
-    const posts = articles.getAllArticles()
+    const posts = articles.getListedArticles()
     assert.deepEqual(
       posts.map(({ slug, date }) => ({ slug, date })),
       [
@@ -50,7 +54,6 @@ test('reads quoted and YAML dates, supplies optional fields, and sorts newest fi
       ],
     )
     assert.equal(posts[1].description, '')
-    assert.equal(posts[1].lang, 'zh-CN')
     assert.deepEqual(posts[0].tags, [])
     assert.match(posts[1].content, /## Hello/)
     assert.equal(errors.length, 2)
@@ -64,6 +67,37 @@ test('reads quoted and YAML dates, supplies optional fields, and sorts newest fi
   }
 })
 
+test('keeps unlisted articles addressable but out of listings, tags and feeds', () => {
+  assert.deepEqual(
+    articles.getAllArticles().map(({ slug }) => slug),
+    ['newer', 'hidden', 'older'],
+  )
+  assert.deepEqual(
+    articles.getListedArticles().map(({ slug }) => slug),
+    ['newer', 'older'],
+  )
+  assert.equal(articles.getArticleBySlug('hidden')?.title, 'Hidden')
+  assert.deepEqual(articles.getArticlesByTag('Hidden'), [])
+  assert.equal(articles.getAllTags().includes('Hidden'), false)
+})
+
+test('rejects a non-boolean unlisted value', () => {
+  const directory = path.join(temporaryDirectory, 'content/articles')
+  const file = path.join(directory, 'hidden.md')
+  const original = fs.readFileSync(file, 'utf8')
+  const errors: unknown[] = []
+  const originalError = console.error
+  console.error = (...args: unknown[]) => errors.push(args)
+  try {
+    fs.writeFileSync(file, original.replace('unlisted: true', "unlisted: 'yes'"))
+    assert.equal(articles.getArticleBySlug('hidden'), null)
+    assert.equal(errors.length, 1)
+  } finally {
+    console.error = originalError
+    fs.writeFileSync(file, original)
+  }
+})
+
 test('does not read a missing post or a path outside the article directory', () => {
   assert.equal(articles.getArticleBySlug('missing'), null)
   assert.equal(articles.getArticleBySlug('../../private'), null)
@@ -71,27 +105,14 @@ test('does not read a missing post or a path outside the article directory', () 
   assert.equal(articles.getArticleBySlug(''), null)
 })
 
-test('reads explicit article languages and rejects invalid language metadata', () => {
+test('ignores a leftover lang field now that typography no longer depends on it', () => {
   const directory = path.join(temporaryDirectory, 'content/articles')
-  for (const lang of ['en', 'zh-CN']) {
-    fs.writeFileSync(
-      path.join(directory, 'language.md'),
-      `---\ntitle: Language\ndate: '2026-10-17'\nlang: ${lang}\n---\nBody`,
-    )
-    assert.equal(articles.getArticleBySlug('language')?.lang, lang)
-  }
-  const originalError = console.error
-  console.error = () => {}
+  fs.writeFileSync(path.join(directory, 'language.md'), "---\ntitle: Language\ndate: '2026-10-17'\nlang: fr\n---\nBody")
   try {
-    for (const lang of ['fr', '42', '[en]', 'null']) {
-      fs.writeFileSync(
-        path.join(directory, 'language.md'),
-        `---\ntitle: Language\ndate: '2026-10-17'\nlang: ${lang}\n---\nBody`,
-      )
-      assert.equal(articles.getArticleBySlug('language'), null)
-    }
+    const article = articles.getArticleBySlug('language')
+    assert.equal(article?.title, 'Language')
+    assert.equal(article !== null && 'lang' in article, false)
   } finally {
-    console.error = originalError
     fs.unlinkSync(path.join(directory, 'language.md'))
   }
 })

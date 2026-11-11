@@ -1,16 +1,18 @@
 import Link from 'next/link'
-import { getAllArticles, getAllTags, getArticlesByTag } from '@/lib/articles'
+import { Rss } from 'lucide-react'
+import { getAllTags, getArticlesByTag, getListedArticles } from '@/lib/articles'
 
 type Props = { searchParams: Promise<{ tag?: string | string[] }> }
 
 export default async function Page({ searchParams }: Props) {
   const { tag } = await searchParams
   const activeTag = typeof tag === 'string' ? tag : ''
-  const articles = activeTag ? getArticlesByTag(activeTag) : getAllArticles()
+  const articles = activeTag ? getArticlesByTag(activeTag) : getListedArticles()
   const tags = getAllTags()
+  const compact = articles.length < 6
 
   return (
-    <main id="main-content" className="index-page page-enter">
+    <main id="main-content" className={`index-page page-enter${compact ? ' index-compact' : ''}`}>
       <div className="index-heading">
         <div>
           <h1>
@@ -19,6 +21,7 @@ export default async function Page({ searchParams }: Props) {
           <p>记录 · 构建</p>
         </div>
         <a href="/rss.xml" className="outline-link">
+          <Rss aria-hidden="true" strokeWidth={1.5} className="link-icon" />
           订阅 RSS <span aria-hidden="true">↗</span>
         </a>
       </div>
@@ -60,6 +63,16 @@ export default async function Page({ searchParams }: Props) {
                     </Link>
                   </h2>
                   <p>{article.description}</p>
+                  {compact && (
+                    <p className="row-inline-meta">
+                      {article.tags.map((item) => (
+                        <Link key={item} href={`/?tag=${encodeURIComponent(item)}`}>
+                          {item}
+                        </Link>
+                      ))}
+                      <time dateTime={article.date}>{article.date.replaceAll('-', '.')}</time>
+                    </p>
+                  )}
                 </div>
                 <div className="row-tags">
                   {article.tags.map((item) => (
@@ -75,7 +88,7 @@ export default async function Page({ searchParams }: Props) {
             ))}
           </section>
           <p className="index-count">
-            共 {articles.length} 篇文章 <span>按日期从新到旧</span>
+            <span>按日期从新到旧</span>
           </p>
         </>
       ) : (

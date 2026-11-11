@@ -11,7 +11,7 @@ export interface Article {
   description: string
   tags: string[]
   content: string
-  lang: 'zh-CN' | 'en'
+  unlisted: boolean
 }
 
 export function getArticleSlugs() {
@@ -38,12 +38,12 @@ export function getArticleBySlug(slug: string): Article | null {
       !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
       new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date ||
       (data.description !== undefined && typeof data.description !== 'string') ||
-      (data.lang !== undefined && data.lang !== 'zh-CN' && data.lang !== 'en') ||
       (data.tags !== undefined &&
-        (!Array.isArray(data.tags) || !data.tags.every((tag: unknown) => typeof tag === 'string')))
+        (!Array.isArray(data.tags) || !data.tags.every((tag: unknown) => typeof tag === 'string'))) ||
+      (data.unlisted !== undefined && typeof data.unlisted !== 'boolean')
     ) {
       throw new Error(
-        '文章需要有效的 title、YYYY-MM-DD 格式的 date，以及可选的 description 字符串、tags 字符串数组和 lang（zh-CN 或 en）',
+        '文章需要有效的 title、YYYY-MM-DD 格式的 date，以及可选的 description 字符串、tags 字符串数组和 unlisted 布尔值',
       )
     }
 
@@ -54,7 +54,7 @@ export function getArticleBySlug(slug: string): Article | null {
       description: data.description ?? '',
       tags: data.tags ?? [],
       content,
-      lang: data.lang ?? 'zh-CN',
+      unlisted: data.unlisted ?? false,
     }
   } catch (error) {
     console.error(`Error reading article ${slug}:`, error)
@@ -69,10 +69,15 @@ export function getAllArticles(): Article[] {
     .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug))
 }
 
+// 索引、主题筛选与 RSS 只使用列出了的文章；unlisted 的页面仍可直达 URL。
+export function getListedArticles(): Article[] {
+  return getAllArticles().filter((article) => !article.unlisted)
+}
+
 export function getArticlesByTag(tag: string): Article[] {
-  return getAllArticles().filter((article) => article.tags.some((t) => t.toLowerCase() === tag.toLowerCase()))
+  return getListedArticles().filter((article) => article.tags.some((t) => t.toLowerCase() === tag.toLowerCase()))
 }
 
 export function getAllTags(): string[] {
-  return Array.from(new Set(getAllArticles().flatMap((article) => article.tags))).sort()
+  return Array.from(new Set(getListedArticles().flatMap((article) => article.tags))).sort()
 }
