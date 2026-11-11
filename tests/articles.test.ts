@@ -50,6 +50,7 @@ test('reads quoted and YAML dates, supplies optional fields, and sorts newest fi
       ],
     )
     assert.equal(posts[1].description, '')
+    assert.equal(posts[1].lang, 'zh-CN')
     assert.deepEqual(posts[0].tags, [])
     assert.match(posts[1].content, /## Hello/)
     assert.equal(errors.length, 2)
@@ -68,4 +69,29 @@ test('does not read a missing post or a path outside the article directory', () 
   assert.equal(articles.getArticleBySlug('../../private'), null)
   assert.equal(articles.getArticleBySlug('..\\..\\private'), null)
   assert.equal(articles.getArticleBySlug(''), null)
+})
+
+test('reads explicit article languages and rejects invalid language metadata', () => {
+  const directory = path.join(temporaryDirectory, 'content/articles')
+  for (const lang of ['en', 'zh-CN']) {
+    fs.writeFileSync(
+      path.join(directory, 'language.md'),
+      `---\ntitle: Language\ndate: '2026-10-17'\nlang: ${lang}\n---\nBody`,
+    )
+    assert.equal(articles.getArticleBySlug('language')?.lang, lang)
+  }
+  const originalError = console.error
+  console.error = () => {}
+  try {
+    for (const lang of ['fr', '42', '[en]', 'null']) {
+      fs.writeFileSync(
+        path.join(directory, 'language.md'),
+        `---\ntitle: Language\ndate: '2026-10-17'\nlang: ${lang}\n---\nBody`,
+      )
+      assert.equal(articles.getArticleBySlug('language'), null)
+    }
+  } finally {
+    console.error = originalError
+    fs.unlinkSync(path.join(directory, 'language.md'))
+  }
 })

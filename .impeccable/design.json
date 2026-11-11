@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T06:12:11.357Z",
+  "title": "Design System: DimplesY",
+  "extensions": {
+    "colorMeta": {
+      "light-background": {
+        "role": "neutral",
+        "displayName": "浅色 · 主画布",
+        "canonical": "#f7f9f5",
+        "tonalRamp": [
+          "color-mix(in oklch, #f7f9f5 30%, black)",
+          "color-mix(in oklch, #f7f9f5 52%, black)",
+          "color-mix(in oklch, #f7f9f5 74%, black)",
+          "color-mix(in oklch, #f7f9f5 98%, black)",
+          "color-mix(in oklch, #f7f9f5 78%, white)",
+          "color-mix(in oklch, #f7f9f5 54%, white)",
+          "color-mix(in oklch, #f7f9f5 30%, white)",
+          "color-mix(in oklch, #f7f9f5 10%, white)"
+        ]
+      },
+      "light-foreground": {
+        "role": "neutral",
+        "displayName": "浅色 · 主要文字",
+        "canonical": "#1a2c24",
+        "tonalRamp": [
+          "color-mix(in oklch, #1a2c24 30%, black)",
+          "color-mix(in oklch, #1a2c24 52%, black)",
+          "color-mix(in oklch, #1a2c24 74%, black)",
+          "color-mix(in oklch, #1a2c24 98%, black)",
+          "color-mix(in oklch, #1a2c24 78%, white)",
+          "color-mix(in oklch, #1a2c24 54%, white)",
+          "color-mix(in oklch, #1a2c24 30%, white)",
+          "color-mix(in oklch, #1a2c24 10%, white)"
+        ]
+      },
+      "light-sidebar": {
+        "role": "neutral",
+        "displayName": "浅色 · 侧栏",
+        "canonical": "#edf2e9",
+        "tonalRamp": [
+          "color-mix(in oklch, #edf2e9 30%, black)",
+          "color-mix(in oklch, #edf2e9 52%, black)",
+          "color-mix(in oklch, #edf2e9 74%, black)",
+          "color-mix(in oklch, #edf2e9 98%, black)",
+          "color-mix(in oklch, #edf2e9 78%, white)",
+          "color-mix(in oklch, #edf2e9 54%, white)",
+          "color-mix(in oklch, #edf2e9 30%, white)",
+          "color-mix(in oklch, #edf2e9 10%, white)"
+        ]
+      },
+      "light-muted": {
+        "role": "neutral",
+        "displayName": "浅色 · 灰绿辅助文字",
+        "canonical": "#52645b",
+        "tonalRamp": [
+          "color-mix(in oklch, #52645b 30%, black)",
+          "color-mix(in oklch, #52645b 52%, black)",
+          "color-mix(in oklch, #52645b 74%, black)",
+          "color-mix(in oklch, #52645b 98%, black)",
+          "color-mix(in oklch, #52645b 78%, white)",
+          "color-mix(in oklch, #52645b 54%, white)",
+          "color-mix(in oklch, #52645b 30%, white)",
+          "color-mix(in oklch, #52645b 10%, white)"
+        ]
+      },
+      "light-accent": {
+        "role": "primary",
+        "displayName": "浅色 · 强调绿",
+        "canonical": "#385f1c",
+        "tonalRamp": [
+          "color-mix(in oklch, #385f1c 30%, black)",
+          "color-mix(in oklch, #385f1c 52%, black)",
+          "color-mix(in oklch, #385f1c 74%, black)",
+          "color-mix(in oklch, #385f1c 98%, black)",
+          "color-mix(in oklch, #385f1c 78%, white)",
+          "color-mix(in oklch, #385f1c 54%, white)",
+          "color-mix(in oklch, #385f1c 30%, white)",
+          "color-mix(in oklch, #385f1c 10%, white)"
+        ]
+      },
+      "light-active": {
+        "role": "primary",
+        "displayName": "浅色 · 选中底色",
+        "canonical": "#d8ecb7",
+        "tonalRamp": [
+          "color-mix(in oklch, #d8ecb7 30%, black)",
+          "color-mix(in oklch, #d8ecb7 52%, black)",
+          "color-mix(in oklch, #d8ecb7 74%, black)",
+          "color-mix(in oklch, #d8ecb7 98%, black)",
+          "color-mix(in oklch, #d8ecb7 78%, white)",
+          "color-mix(in oklch, #d8ecb7 54%, white)",
+          "color-mix(in oklch, #d8ecb7 30%, white)",
+          "color-mix(in oklch, #d8ecb7 10%, white)"
+        ]
+      },
+      "light-active-text": {
+        "role": "primary",
+        "displayName": "浅色 · 选中墨色",
+        "canonical": "#1d3416",
+        "tonalRamp": [
+          "color-mix(in oklch, #1d3416 30%, black)",
+          "color-mix(in oklch, #1d3416 52%, black)",
+          "color-mix(in oklch, #1d3416 74%, black)",
+          "color-mix(in oklch, #1d3416 98%, black)",
+          "color-mix(in oklch, #1d3416 78%, white)",
+          "color-mix(in oklch, #1d3416 54%, white)",
+          "color-mix(in oklch, #1d3416 30%, white)",
+          "color-mix(in oklch, #1d3416 10%, white)"
+        ]
+      },
+      "light-rule": {
+        "role": "neutral",
+        "displayName": "浅色 · 分隔细线",
+        "canonical": "#cbd6cd",
+        "tonalRamp": [
+          "color-mix(in oklch, #cbd6cd 30%, black)",
+          "color-mix(in oklch, #cbd6cd 52%, black)",
+          "color-mix(in oklch, #cbd6cd 74%, black)",
+          "color-mix(in oklch, #cbd6cd 98%, black)",
+          "color-mix(in oklch, #cbd6cd 78%, white)",
+          "color-mix(in oklch, #cbd6cd 54%, white)",
+          "color-mix(in oklch, #cbd6cd 30%, white)",
+          "color-mix(in oklch, #cbd6cd 10%, white)"
+        ]
+      },
+      "light-code": {
+        "role": "neutral",
+        "displayName": "浅色 · 代码底色",
+        "canonical": "#eaf0e5",
+        "tonalRamp": [
+          "color-mix(in oklch, #eaf0e5 30%, black)",
+          "color-mix(in oklch, #eaf0e5 52%, black)",
+          "color-mix(in oklch, #eaf0e5 74%, black)",
+          "color-mix(in oklch, #eaf0e5 98%, black)",
+          "color-mix(in oklch, #eaf0e5 78%, white)",
+          "color-mix(in oklch, #eaf0e5 54%, white)",
+          "color-mix(in oklch, #eaf0e5 30%, white)",
+          "color-mix(in oklch, #eaf0e5 10%, white)"
+        ]
+      },
+      "light-hover": {
+        "role": "neutral",
+        "displayName": "浅色 · 悬停底色",
+        "canonical": "#edf3e8",
+        "tonalRamp": [
+          "color-mix(in oklch, #edf3e8 30%, black)",
+          "color-mix(in oklch, #edf3e8 52%, black)",
+          "color-mix(in oklch, #edf3e8 74%, black)",
+          "color-mix(in oklch, #edf3e8 98%, black)",
+          "color-mix(in oklch, #edf3e8 78%, white)",
+          "color-mix(in oklch, #edf3e8 54%, white)",
+          "color-mix(in oklch, #edf3e8 30%, white)",
+          "color-mix(in oklch, #edf3e8 10%, white)"
+        ]
+      },
+      "light-syntax-comment": {
+        "role": "neutral",
+        "displayName": "浅色 · syntax-comment",
+        "canonical": "#5c7062",
+        "tonalRamp": [
+          "color-mix(in oklch, #5c7062 30%, black)",
+          "color-mix(in oklch, #5c7062 52%, black)",
+          "color-mix(in oklch, #5c7062 74%, black)",
+          "color-mix(in oklch, #5c7062 98%, black)",
+          "color-mix(in oklch, #5c7062 78%, white)",
+          "color-mix(in oklch, #5c7062 54%, white)",
+          "color-mix(in oklch, #5c7062 30%, white)",
+          "color-mix(in oklch, #5c7062 10%, white)"
+        ]
+      },
+      "light-syntax-keyword": {
+        "role": "neutral",
+        "displayName": "浅色 · syntax-keyword",
+        "canonical": "#7945a7",
+        "tonalRamp": [
+          "color-mix(in oklch, #7945a7 30%, black)",
+          "color-mix(in oklch, #7945a7 52%, black)",
+          "color-mix(in oklch, #7945a7 74%, black)",
+          "color-mix(in oklch, #7945a7 98%, black)",
+          "color-mix(in oklch, #7945a7 78%, white)",
+          "color-mix(in oklch, #7945a7 54%, white)",
+          "color-mix(in oklch, #7945a7 30%, white)",
+          "color-mix(in oklch, #7945a7 10%, white)"
+        ]
+      },
+      "light-syntax-string": {
+        "role": "neutral",
+        "displayName": "浅色 · syntax-string",
+        "canonical": "#2c6734",
+        "tonalRamp": [
+          "color-mix(in oklch, #2c6734 30%, black)",
+          "color-mix(in oklch, #2c6734 52%, black)",
+          "color-mix(in oklch, #2c6734 74%, black)",
+          "color-mix(in oklch, #2c6734 98%, black)",
+          "color-mix(in oklch, #2c6734 78%, white)",
+          "color-mix(in oklch, #2c6734 54%, white)",
+          "color-mix(in oklch, #2c6734 30%, white)",
+          "color-mix(in oklch, #2c6734 10%, white)"
+        ]
+      },
+      "light-syntax-function": {
+        "role": "neutral",
+        "displayName": "浅色 · syntax-function",
+        "canonical": "#175f8b",
+        "tonalRamp": [
+          "color-mix(in oklch, #175f8b 30%, black)",
+          "color-mix(in oklch, #175f8b 52%, black)",
+          "color-mix(in oklch, #175f8b 74%, black)",
+          "color-mix(in oklch, #175f8b 98%, black)",
+          "color-mix(in oklch, #175f8b 78%, white)",
+          "color-mix(in oklch, #175f8b 54%, white)",
+          "color-mix(in oklch, #175f8b 30%, white)",
+          "color-mix(in oklch, #175f8b 10%, white)"
+        ]
+      },
+      "light-syntax-number": {
+        "role": "neutral",
+        "displayName": "浅色 · syntax-number",
+        "canonical": "#99521d",
+        "tonalRamp": [
+          "color-mix(in oklch, #99521d 30%, black)",
+          "color-mix(in oklch, #99521d 52%, black)",
+          "color-mix(in oklch, #99521d 74%, black)",
+          "color-mix(in oklch, #99521d 98%, black)",
+          "color-mix(in oklch, #99521d 78%, white)",
+          "color-mix(in oklch, #99521d 54%, white)",
+          "color-mix(in oklch, #99521d 30%, white)",
+          "color-mix(in oklch, #99521d 10%, white)"
+        ]
+      },
+      "light-syntax-property": {
+        "role": "neutral",
+        "displayName": "浅色 · syntax-property",
+        "canonical": "#8d3d53",
+        "tonalRamp": [
+          "color-mix(in oklch, #8d3d53 30%, black)",
+          "color-mix(in oklch, #8d3d53 52%, black)",
+          "color-mix(in oklch, #8d3d53 74%, black)",
+          "color-mix(in oklch, #8d3d53 98%, black)",
+          "color-mix(in oklch, #8d3d53 78%, white)",
+          "color-mix(in oklch, #8d3d53 54%, white)",
+          "color-mix(in oklch, #8d3d53 30%, white)",
+          "color-mix(in oklch, #8d3d53 10%, white)"
+        ]
+      },
+      "dark-background": {
+        "role": "neutral",
+        "displayName": "深色 · 主画布",
+        "canonical": "#132324",
+        "tonalRamp": [
+          "color-mix(in oklch, #132324 30%, black)",
+          "color-mix(in oklch, #132324 52%, black)",
+          "color-mix(in oklch, #132324 74%, black)",
+          "color-mix(in oklch, #132324 98%, black)",
+          "color-mix(in oklch, #132324 78%, white)",
+          "color-mix(in oklch, #132324 54%, white)",
+          "color-mix(in oklch, #132324 30%, white)",
+          "color-mix(in oklch, #132324 10%, white)"
+        ]
+      },
+      "dark-foreground": {
+        "role": "neutral",
+        "displayName": "深色 · 主要文字",
+        "canonical": "#e6eee8",
+        "tonalRamp": [
+          "color-mix(in oklch, #e6eee8 30%, black)",
+          "color-mix(in oklch, #e6eee8 52%, black)",
+          "color-mix(in oklch, #e6eee8 74%, black)",
+          "color-mix(in oklch, #e6eee8 98%, black)",
+          "color-mix(in oklch, #e6eee8 78%, white)",
+          "color-mix(in oklch, #e6eee8 54%, white)",
+          "color-mix(in oklch, #e6eee8 30%, white)",
+          "color-mix(in oklch, #e6eee8 10%, white)"
+        ]
+      },
+      "dark-sidebar": {
+        "role": "neutral",
+        "displayName": "深色 · 侧栏",
+        "canonical": "#0c1b1c",
+        "tonalRamp": [
+          "color-mix(in oklch, #0c1b1c 30%, black)",
+          "color-mix(in oklch, #0c1b1c 52%, black)",
+          "color-mix(in oklch, #0c1b1c 74%, black)",
+          "color-mix(in oklch, #0c1b1c 98%, black)",
+          "color-mix(in oklch, #0c1b1c 78%, white)",
+          "color-mix(in oklch, #0c1b1c 54%, white)",
+          "color-mix(in oklch, #0c1b1c 30%, white)",
+          "color-mix(in oklch, #0c1b1c 10%, white)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "深色 · 灰绿辅助文字",
+        "canonical": "#a6b9b1",
+        "tonalRamp": [
+          "color-mix(in oklch, #a6b9b1 30%, black)",
+          "color-mix(in oklch, #a6b9b1 52%, black)",
+          "color-mix(in oklch, #a6b9b1 74%, black)",
+          "color-mix(in oklch, #a6b9b1 98%, black)",
+          "color-mix(in oklch, #a6b9b1 78%, white)",
+          "color-mix(in oklch, #a6b9b1 54%, white)",
+          "color-mix(in oklch, #a6b9b1 30%, white)",
+          "color-mix(in oklch, #a6b9b1 10%, white)"
+        ]
+      },
+      "dark-accent": {
+        "role": "primary",
+        "displayName": "深色 · 强调绿",
+        "canonical": "#c6ea81",
+        "tonalRamp": [
+          "color-mix(in oklch, #c6ea81 30%, black)",
+          "color-mix(in oklch, #c6ea81 52%, black)",
+          "color-mix(in oklch, #c6ea81 74%, black)",
+          "color-mix(in oklch, #c6ea81 98%, black)",
+          "color-mix(in oklch, #c6ea81 78%, white)",
+          "color-mix(in oklch, #c6ea81 54%, white)",
+          "color-mix(in oklch, #c6ea81 30%, white)",
+          "color-mix(in oklch, #c6ea81 10%, white)"
+        ]
+      },
+      "dark-active": {
+        "role": "primary",
+        "displayName": "深色 · 选中底色",
+        "canonical": "#c6ea81",
+        "tonalRamp": [
+          "color-mix(in oklch, #c6ea81 30%, black)",
+          "color-mix(in oklch, #c6ea81 52%, black)",
+          "color-mix(in oklch, #c6ea81 74%, black)",
+          "color-mix(in oklch, #c6ea81 98%, black)",
+          "color-mix(in oklch, #c6ea81 78%, white)",
+          "color-mix(in oklch, #c6ea81 54%, white)",
+          "color-mix(in oklch, #c6ea81 30%, white)",
+          "color-mix(in oklch, #c6ea81 10%, white)"
+        ]
+      },
+      "dark-active-text": {
+        "role": "primary",
+        "displayName": "深色 · 选中墨色",
+        "canonical": "#162721",
+        "tonalRamp": [
+          "color-mix(in oklch, #162721 30%, black)",
+          "color-mix(in oklch, #162721 52%, black)",
+          "color-mix(in oklch, #162721 74%, black)",
+          "color-mix(in oklch, #162721 98%, black)",
+          "color-mix(in oklch, #162721 78%, white)",
+          "color-mix(in oklch, #162721 54%, white)",
+          "color-mix(in oklch, #162721 30%, white)",
+          "color-mix(in oklch, #162721 10%, white)"
+        ]
+      },
+      "dark-rule": {
+        "role": "neutral",
+        "displayName": "深色 · 分隔细线",
+        "canonical": "#344546",
+        "tonalRamp": [
+          "color-mix(in oklch, #344546 30%, black)",
+          "color-mix(in oklch, #344546 52%, black)",
+          "color-mix(in oklch, #344546 74%, black)",
+          "color-mix(in oklch, #344546 98%, black)",
+          "color-mix(in oklch, #344546 78%, white)",
+          "color-mix(in oklch, #344546 54%, white)",
+          "color-mix(in oklch, #344546 30%, white)",
+          "color-mix(in oklch, #344546 10%, white)"
+        ]
+      },
+      "dark-code": {
+        "role": "neutral",
+        "displayName": "深色 · 代码底色",
+        "canonical": "#0e1d1e",
+        "tonalRamp": [
+          "color-mix(in oklch, #0e1d1e 30%, black)",
+          "color-mix(in oklch, #0e1d1e 52%, black)",
+          "color-mix(in oklch, #0e1d1e 74%, black)",
+          "color-mix(in oklch, #0e1d1e 98%, black)",
+          "color-mix(in oklch, #0e1d1e 78%, white)",
+          "color-mix(in oklch, #0e1d1e 54%, white)",
+          "color-mix(in oklch, #0e1d1e 30%, white)",
+          "color-mix(in oklch, #0e1d1e 10%, white)"
+        ]
+      },
+      "dark-hover": {
+        "role": "neutral",
+        "displayName": "深色 · 悬停底色",
+        "canonical": "#1b2d2c",
+        "tonalRamp": [
+          "color-mix(in oklch, #1b2d2c 30%, black)",
+          "color-mix(in oklch, #1b2d2c 52%, black)",
+          "color-mix(in oklch, #1b2d2c 74%, black)",
+          "color-mix(in oklch, #1b2d2c 98%, black)",
+          "color-mix(in oklch, #1b2d2c 78%, white)",
+          "color-mix(in oklch, #1b2d2c 54%, white)",
+          "color-mix(in oklch, #1b2d2c 30%, white)",
+          "color-mix(in oklch, #1b2d2c 10%, white)"
+        ]
+      },
+      "dark-syntax-comment": {
+        "role": "neutral",
+        "displayName": "深色 · syntax-comment",
+        "canonical": "#91a69b",
+        "tonalRamp": [
+          "color-mix(in oklch, #91a69b 30%, black)",
+          "color-mix(in oklch, #91a69b 52%, black)",
+          "color-mix(in oklch, #91a69b 74%, black)",
+          "color-mix(in oklch, #91a69b 98%, black)",
+          "color-mix(in oklch, #91a69b 78%, white)",
+          "color-mix(in oklch, #91a69b 54%, white)",
+          "color-mix(in oklch, #91a69b 30%, white)",
+          "color-mix(in oklch, #91a69b 10%, white)"
+        ]
+      },
+      "dark-syntax-keyword": {
+        "role": "neutral",
+        "displayName": "深色 · syntax-keyword",
+        "canonical": "#c7a6e8",
+        "tonalRamp": [
+          "color-mix(in oklch, #c7a6e8 30%, black)",
+          "color-mix(in oklch, #c7a6e8 52%, black)",
+          "color-mix(in oklch, #c7a6e8 74%, black)",
+          "color-mix(in oklch, #c7a6e8 98%, black)",
+          "color-mix(in oklch, #c7a6e8 78%, white)",
+          "color-mix(in oklch, #c7a6e8 54%, white)",
+          "color-mix(in oklch, #c7a6e8 30%, white)",
+          "color-mix(in oklch, #c7a6e8 10%, white)"
+        ]
+      },
+      "dark-syntax-string": {
+        "role": "neutral",
+        "displayName": "深色 · syntax-string",
+        "canonical": "#c6ea81",
+        "tonalRamp": [
+          "color-mix(in oklch, #c6ea81 30%, black)",
+          "color-mix(in oklch, #c6ea81 52%, black)",
+          "color-mix(in oklch, #c6ea81 74%, black)",
+          "color-mix(in oklch, #c6ea81 98%, black)",
+          "color-mix(in oklch, #c6ea81 78%, white)",
+          "color-mix(in oklch, #c6ea81 54%, white)",
+          "color-mix(in oklch, #c6ea81 30%, white)",
+          "color-mix(in oklch, #c6ea81 10%, white)"
+        ]
+      },
+      "dark-syntax-function": {
+        "role": "neutral",
+        "displayName": "深色 · syntax-function",
+        "canonical": "#87cddd",
+        "tonalRamp": [
+          "color-mix(in oklch, #87cddd 30%, black)",
+          "color-mix(in oklch, #87cddd 52%, black)",
+          "color-mix(in oklch, #87cddd 74%, black)",
+          "color-mix(in oklch, #87cddd 98%, black)",
+          "color-mix(in oklch, #87cddd 78%, white)",
+          "color-mix(in oklch, #87cddd 54%, white)",
+          "color-mix(in oklch, #87cddd 30%, white)",
+          "color-mix(in oklch, #87cddd 10%, white)"
+        ]
+      },
+      "dark-syntax-number": {
+        "role": "neutral",
+        "displayName": "深色 · syntax-number",
+        "canonical": "#ecc488",
+        "tonalRamp": [
+          "color-mix(in oklch, #ecc488 30%, black)",
+          "color-mix(in oklch, #ecc488 52%, black)",
+          "color-mix(in oklch, #ecc488 74%, black)",
+          "color-mix(in oklch, #ecc488 98%, black)",
+          "color-mix(in oklch, #ecc488 78%, white)",
+          "color-mix(in oklch, #ecc488 54%, white)",
+          "color-mix(in oklch, #ecc488 30%, white)",
+          "color-mix(in oklch, #ecc488 10%, white)"
+        ]
+      },
+      "dark-syntax-property": {
+        "role": "neutral",
+        "displayName": "深色 · syntax-property",
+        "canonical": "#e3a1b0",
+        "tonalRamp": [
+          "color-mix(in oklch, #e3a1b0 30%, black)",
+          "color-mix(in oklch, #e3a1b0 52%, black)",
+          "color-mix(in oklch, #e3a1b0 74%, black)",
+          "color-mix(in oklch, #e3a1b0 98%, black)",
+          "color-mix(in oklch, #e3a1b0 78%, white)",
+          "color-mix(in oklch, #e3a1b0 54%, white)",
+          "color-mix(in oklch, #e3a1b0 30%, white)",
+          "color-mix(in oklch, #e3a1b0 10%, white)"
+        ]
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state",
+        "value": "180ms",
+        "purpose": "文字、边框、背景及箭头状态过渡。"
+      },
+      {
+        "name": "press",
+        "value": "100ms",
+        "purpose": "按下时向下移动 1px。"
+      },
+      {
+        "name": "page-enter",
+        "value": "300ms cubic-bezier(0.2, 0.7, 0.2, 1)",
+        "purpose": "页面淡入并复位 5px 位移。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ],
+    "notes": [
+      "tonalRamp 是仅供预览的合成色阶，项目并未定义这些阶梯 token。",
+      "预览默认深色，继承宿主同名 CSS 变量时随主题变化。",
+      "移动端导航 inset 下划线属于状态指示，不属于投影。"
+    ],
+    "typographyMeta": {
+      "body-en": {
+        "displayName": "英文正文",
+        "purpose": "lang=en 的正文使用 next/font/google 自托管的 Lora 衬线字体，中文正文、标题与代码保留各自字体。"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Theme toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "透明描边的主题切换按钮。",
+      "html": "<button class=\"ds-theme\"><span aria-hidden=\"true\">◐</span> 亮色模式</button>",
+      "css": ".ds-theme{display:inline-flex;align-items:center;gap:10px;min-width:110px;justify-content:center;padding:9px 12px;border:1px solid var(--rule, #344546);border-radius:3px;background:transparent;color:var(--foreground, #e6eee8);font:13px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;cursor:pointer;transition:background 180ms,border-color 180ms,transform 100ms}.ds-theme:hover{border-color:var(--accent, #c6ea81);background:var(--hover, #1b2d2c)}.ds-theme:active{transform:translateY(1px)}.ds-theme:disabled{opacity:.6;cursor:default}.ds-theme:focus-visible{outline:2px solid var(--accent, #c6ea81);outline-offset:5px}"
+    },
+    {
+      "name": "RSS link",
+      "kind": "button",
+      "refersTo": "outline-link",
+      "description": "文章索引中的轻量订阅入口。",
+      "html": "<a class=\"ds-outline\" href=\"/rss.xml\">订阅 RSS <span aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-outline{display:inline-flex;gap:14px;align-items:center;padding:10px 15px;border:1px solid var(--rule, #344546);border-radius:3px;color:var(--foreground, #e6eee8);text-decoration:none;font:13px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;transition:border-color 180ms,color 180ms,transform 100ms}.ds-outline:hover{border-color:var(--accent, #c6ea81);color:var(--accent, #c6ea81)}.ds-outline:active{transform:translateY(1px)}.ds-outline:focus-visible{outline:2px solid var(--accent, #c6ea81);outline-offset:5px}"
+    },
+    {
+      "name": "Sidebar navigation",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "桌面主导航与当前项。",
+      "html": "<nav class=\"ds-nav\" aria-label=\"主导航\"><a class=\"ds-active\" href=\"/\" aria-current=\"page\">文章索引 <span aria-hidden=\"true\">↗</span></a><a href=\"/articles/about\">关于我</a></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;gap:9px;background:var(--sidebar, #0c1b1c);font:14px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif}.ds-nav a{display:flex;justify-content:space-between;padding:13px 14px;border-radius:3px;color:var(--muted, #a6b9b1);text-decoration:none;transition:background 180ms,color 180ms,transform 100ms}.ds-nav a:hover{color:var(--foreground, #e6eee8);background:var(--hover, #1b2d2c)}.ds-nav a.ds-active{background:var(--active, #c6ea81);color:var(--active-text, #162721)}.ds-nav a:active{transform:translateY(1px)}.ds-nav a:focus-visible{outline:2px solid var(--accent, #c6ea81);outline-offset:5px}"
+    },
+    {
+      "name": "Topic tabs",
+      "kind": "nav",
+      "refersTo": "topic-current",
+      "description": "以文字和底部状态线筛选主题。",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"按主题浏览\"><a class=\"ds-current\" href=\"/\" aria-current=\"page\">全部文章</a><a href=\"/?tag=关于我\">关于我</a></nav>",
+      "css": ".ds-tabs{display:flex;flex-wrap:wrap;gap:27px;border-bottom:1px solid var(--rule, #344546);font:14px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif}.ds-tabs a{padding:18px 0;color:var(--muted, #a6b9b1);text-decoration:none;position:relative;transition:color 180ms}.ds-tabs a:hover,.ds-tabs a.ds-current{color:var(--accent, #c6ea81)}.ds-tabs .ds-current:after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent, #c6ea81)}.ds-tabs a:focus-visible{outline:2px solid var(--accent, #c6ea81);outline-offset:5px}"
+    },
+    {
+      "name": "Article index row",
+      "kind": "custom",
+      "refersTo": "article-row",
+      "description": "平面列表条目，以细线与文字建立层级。",
+      "html": "<article class=\"ds-row\"><span class=\"ds-number\">01</span><div><h2><a href=\"/articles/about\">关于我 <span aria-hidden=\"true\">↗</span></a></h2><p>AI Builder，持续学习，构建自己的产品。</p></div><time datetime=\"2026-10-17\">2026.10.17</time></article>",
+      "css": ".ds-row{display:grid;grid-template-columns:48px minmax(0,1fr) 112px;padding:26px 0;border-bottom:1px solid var(--rule, #344546);color:var(--foreground, #e6eee8);font-family:-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif}.ds-number,.ds-row time{font:13px/1.8 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;color:var(--muted, #a6b9b1)}.ds-row h2{margin:0;font-size:21px;font-weight:500;line-height:1.55}.ds-row a{color:var(--accent, #c6ea81);text-decoration:none}.ds-row a span{display:inline-block;opacity:0;transform:translateX(-3px);transition:opacity 180ms,transform 180ms}.ds-row a:hover span,.ds-row a:focus-visible span{opacity:1;transform:none}.ds-row p{margin:11px 30px 0 0;font-size:14px;line-height:1.8;color:var(--muted, #a6b9b1)}.ds-row a:focus-visible{outline:2px solid var(--accent, #c6ea81);outline-offset:5px}"
+    },
+    {
+      "name": "English article body",
+      "kind": "custom",
+      "description": "英文正文使用 next/font 加载的 Lora，标题无衬线，代码等宽。",
+      "html": "<div class=\"ds-reading\" lang=\"en\"><h2>Building with care</h2><p>A quiet space for ideas, careful experiments, and the things we learn along the way. Keep the interface simple so the writing can lead.</p><p>Use <code>const value = 42</code> when discussing code.</p></div>",
+      "css": ".ds-reading{font-family:var(--font-reading-serif,Lora),Georgia,\"Times New Roman\",serif;font-size:17px;line-height:1.95;color:var(--foreground,#e6eee8)}.ds-reading h2{font-family:var(--sans,-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Microsoft YaHei\",sans-serif);font-size:26px;font-weight:550;line-height:1.5;margin:40px 0 18px}.ds-reading h2:first-child{margin-top:0}.ds-reading p{margin:24px 0}.ds-reading code{font:0.85em/1.8 var(--mono,\"SFMono-Regular\",Consolas,\"Liberation Mono\",monospace);background:var(--code,#0e1d1e);border:1px solid var(--rule,#344546);border-radius:3px;padding:2px 5px}@media(max-width:700px){.ds-reading{font-size:16px}.ds-reading h2{font-size:24px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "开发者的编辑桌",
+    "overview": "一个安静、清晰、精确的个人写作空间。深青墨底色承托文字，浅草绿标记当前位置与可进入的内容；浅色主题则像雾白纸上的绿墨。路径式面包屑、等宽日期、品牌尾部的下划线共同传达开发者气质，中文排版保留温度。\n\n整体平面、细线分区，组件克制。文章索引依靠列对齐与横向分隔线组织信息，长文依靠有限行宽、宽松行距和清晰标题层级组织阅读。空白是布局的一部分，内容较少时无需填满屏幕。",
+    "keyCharacteristics": [
+      "深青墨与雾白纸双主题，绿色承担主要强调。",
+      "系统中文无衬线字体搭配等宽的路径、编号与日期。",
+      "桌面侧栏与平面文章索引；移动端横向导航与纵向条目。",
+      "细分隔线、微圆角、短促状态反馈，无悬浮卡片层级。"
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Pair Rule",
+        "body": "使用前景、背景和交互状态的同主题配对；新增样式引用现有语义变量，不将深色主题的浅草绿直接用于浅色正文链接。",
+        "section": "Colors"
+      },
+      {
+        "name": "The Quiet Hierarchy Rule",
+        "body": "保持正文宽松、辅助文字收敛，延续现有的中等字重层级；不要把导航或日期提升为大号展示文字。",
+        "section": "Typography"
+      },
+      {
+        "name": "The Reading Width Rule",
+        "body": "索引利用工作区宽度，文章正文保留最大阅读栏；长代码和表格在自身容器内横向滚动，不撑宽整个页面。",
+        "section": "Layout"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "延续平面关系，用细线与色调变化区分区域；不要为现有文章条目添加投影、玻璃模糊或浮起卡片。",
+        "section": "Elevation & Depth"
+      }
+    ],
+    "dos": [
+      "**Do** 使用现有语义色变量，同时维护深色与浅色主题。",
+      "**Do** 保留列对齐、细线分区及正文最大阅读栏，让内容建立层级。",
+      "**Do** 将路径、编号、日期和代码交给等宽字体，中文阅读交给系统无衬线字体。",
+      "**Do** 同步维护悬停、键盘焦点、当前项和减少动态效果的状态。",
+      "**Do** 根据实际内容隐藏次要列、调整日期位置，延续现有移动端行为。"
+    ],
+    "donts": [
+      "**Don't** 将文章索引改成带投影的大圆角卡片，或用装饰填满空白。",
+      "**Don't** 将代码语法色扩展为全站 UI 配色，或混用两个主题的前景背景。",
+      "**Don't** 隐藏键盘焦点，或让长代码、长链接与表格撑宽页面。",
+      "**Don't** 将本文未实现的表单、弹窗和按钮变体视为既有组件规范。"
+    ]
+  }
+}

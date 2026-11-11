@@ -11,6 +11,7 @@ export interface Article {
   description: string
   tags: string[]
   content: string
+  lang: 'zh-CN' | 'en'
 }
 
 export function getArticleSlugs() {
@@ -37,13 +38,24 @@ export function getArticleBySlug(slug: string): Article | null {
       !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
       new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date ||
       (data.description !== undefined && typeof data.description !== 'string') ||
+      (data.lang !== undefined && data.lang !== 'zh-CN' && data.lang !== 'en') ||
       (data.tags !== undefined &&
         (!Array.isArray(data.tags) || !data.tags.every((tag: unknown) => typeof tag === 'string')))
     ) {
-      throw new Error('文章需要有效的 title、YYYY-MM-DD 格式的 date，以及可选的 description 字符串和 tags 字符串数组')
+      throw new Error(
+        '文章需要有效的 title、YYYY-MM-DD 格式的 date，以及可选的 description 字符串、tags 字符串数组和 lang（zh-CN 或 en）',
+      )
     }
 
-    return { slug, title: data.title.trim(), date, description: data.description ?? '', tags: data.tags ?? [], content }
+    return {
+      slug,
+      title: data.title.trim(),
+      date,
+      description: data.description ?? '',
+      tags: data.tags ?? [],
+      content,
+      lang: data.lang ?? 'zh-CN',
+    }
   } catch (error) {
     console.error(`Error reading article ${slug}:`, error)
     return null

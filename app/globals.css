@@ -28,6 +28,7 @@
   --syntax-number: #99521d;
   --syntax-property: #8d3d53;
   --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 .dark {
   color-scheme: dark;
@@ -60,7 +61,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
 }
 a {
@@ -495,6 +496,12 @@ p {
   font-size: 17px;
   line-height: 1.95;
   overflow-wrap: anywhere;
+}
+.article-body:lang(en) {
+  font-family: var(--font-reading-serif), Georgia, 'Times New Roman', serif;
+}
+.article-body :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--sans);
 }
 .article-body > :first-child {
   margin-top: 0;
